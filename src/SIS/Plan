@@ -1,0 +1,25 @@
+CRUDL
+
+Create
+    add student
+    -generate ID when you clicked add student button (Lock the object array)
+        - the generated id would then be added directly to the array
+        year + generated number from 0000
+        *year can be manually added
+        
+
+Read - Finished
+    initiation of the software:
+        read the csv's -> load datas to object array
+
+Update
+    
+Delete
+
+List
+
+TODO:
+
+flag if info is not complete
+minimize constants
+set look and feel to flat Laf Dark - Done
