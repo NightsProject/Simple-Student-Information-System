@@ -84,6 +84,8 @@ public class Student extends Program{
         super.programCode = programCode;
     }
 
-    
+    public String studentData(){
+        return idNum + "/" + firstName + "/" + lastName + "/" + yearLevel + "/" + gender + "/" + collegeCode + "/" + programCode;
+    }
     
 }

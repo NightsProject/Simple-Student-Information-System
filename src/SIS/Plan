@@ -2,15 +2,20 @@ CRUDL
 
 Create
     add student
-    -generate ID when you clicked add student button (Lock the object array)
+    -generate ID when you clicked add student button (Lock the object array[number])
         - the generated id would then be added directly to the array
         year + generated number from 0000
-        *year can be manually added
-        
+        Year = editable and automatically read from the csv 
+    
+    add college
+        -add dialog - done
+        -write to csv - done
 
 Read - Finished
     initiation of the software:
         read the csv's -> load datas to object array
+
+        
 
 Update
     
@@ -21,9 +26,19 @@ List
 TODO:
 
 Pending:
+create a loading screen 
 flag if info is not complete
 minimize constants
 set look and feel to flat Laf Dark
 
+checkpoints
+need to sort the students by IdNum
 Done:
 read data from csv doc
+
+
+
+Problems encountered
+- the showLabel in MainMenu does not function properly
+
+-the modality cant block the other window on college and program dialog

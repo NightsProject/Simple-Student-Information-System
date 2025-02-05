@@ -25,4 +25,8 @@ public class College {
     public void setCollegeName(String collegeName) {
         this.collegeName = collegeName;
     }
+    
+    public String collegeData(){
+        return collegeCode + "/" + collegeName;
+    }
 }

@@ -38,5 +38,7 @@ public class Program extends College{
         super.collegeCode = collegeCode;
     }
     
-    
+    public String programData(){
+        return programCode + "/" + programName + "/" + collegeCode;
+    }
 }

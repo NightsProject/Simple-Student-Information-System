@@ -54,7 +54,7 @@ public class AddStudent extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 90, 30));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 90, 30));
 
         idLabel.setText("ID NUMBER");
         getContentPane().add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 30));

@@ -118,10 +118,10 @@ public class Read {
                 Main.student[i].setLastName(studentDataFormat[2]);
                 Main.student[i].setYearLevel(studentDataFormat[3]);
                 Main.student[i].setGender(studentDataFormat[4]);
-                Main.student[i].setProgramCode(studentDataFormat[5]);
-                Main.student[i].setProgramName(studentDataFormat[6]);
-                Main.student[i].setCollegeCode(studentDataFormat[7]);
-                Main.student[i].setCollegeName(studentDataFormat[8]);
+                Main.student[i].setCollegeCode(studentDataFormat[5]);
+                Main.student[i].setProgramCode(studentDataFormat[6]);
+               
+              
                 
                 i++;
             }
@@ -139,6 +139,46 @@ public class Read {
         
     }
     
+    public static void readYearLevel(){
+        
+        try{
+            
+            File yearLevelData = new File("src/SIS/Components/Data/YearLevel.csv");
+            Scanner scan = new Scanner(yearLevelData);
+            
+            int count = 0;
+            while(scan.hasNextLine()){
+                
+                Main.YearLevel[count] = scan.nextLine();
+                count++;
+                
+            }
+            
+        }catch(IOException e){
+            
+        }
+        
+    }
     
+    public static void readYear(){
+        
+        try{
+            
+            File yearData = new File("src/SIS/Components/Data/Year.csv");
+            Scanner scan = new Scanner(yearData);
+            
+            int count = 0;
+            while(scan.hasNextLine()){
+                
+                Main.Years[count] = scan.nextLine();
+                count++;
+                
+            }
+            
+        }catch(IOException e){
+            
+        }
+        
+    }
     
 }
