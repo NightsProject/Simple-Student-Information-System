@@ -6,10 +6,11 @@ import SIS.Components.Write;
 
 import java.awt.event.*;
 import javax.swing.ButtonModel;
-public class MainMenu extends javax.swing.JFrame {
+import javax.swing.table.DefaultTableModel;
+public class MainWindow extends javax.swing.JFrame {
 
    
-    public MainMenu() {
+    public MainWindow() {
         initComponents();
     }
 
@@ -55,34 +56,31 @@ public class MainMenu extends javax.swing.JFrame {
         genderGroup = new javax.swing.ButtonGroup();
         MainMenu = new javax.swing.JPanel();
         SIS = new javax.swing.JLabel();
-        addNP = new javax.swing.JButton();
-        addNC = new javax.swing.JButton();
-        programList = new javax.swing.JButton();
-        collegeList = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentTable = new javax.swing.JTable();
-        idLabel7 = new javax.swing.JLabel();
-        idLabel8 = new javax.swing.JLabel();
-        idLabel9 = new javax.swing.JLabel();
-        idLabel10 = new javax.swing.JLabel();
-        idLabel11 = new javax.swing.JLabel();
-        idLabel12 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         idLabel13 = new javax.swing.JLabel();
-        firstNameField1 = new javax.swing.JTextField();
-        lastNameField1 = new javax.swing.JTextField();
-        lastNameField2 = new javax.swing.JTextField();
-        lastNameField3 = new javax.swing.JTextField();
-        lastNameField4 = new javax.swing.JTextField();
-        lastNameField5 = new javax.swing.JTextField();
-        lastNameField6 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        programCodeField = new javax.swing.JTextField();
+        collegeCodeField = new javax.swing.JTextField();
+        idLabel8 = new javax.swing.JLabel();
+        idLabel12 = new javax.swing.JLabel();
+        genderField = new javax.swing.JTextField();
+        yearLevelField = new javax.swing.JTextField();
+        idLabel11 = new javax.swing.JLabel();
+        idLabel10 = new javax.swing.JLabel();
+        lastNameLabel = new javax.swing.JTextField();
+        firstNameLabel = new javax.swing.JTextField();
+        idLabel9 = new javax.swing.JLabel();
+        idLabel7 = new javax.swing.JLabel();
+        idNumberField = new javax.swing.JTextField();
+        editButton = new javax.swing.JButton();
+        saveButton = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        addStudent = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        SSIS = new javax.swing.JMenu();
+        newStudent = new javax.swing.JMenuItem();
+        newProgram = new javax.swing.JMenuItem();
+        neweCollege = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -229,9 +227,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Student Information System");
-        setMaximumSize(new java.awt.Dimension(1371, 641));
-        setMinimumSize(new java.awt.Dimension(1371, 641));
-        setPreferredSize(new java.awt.Dimension(1371, 641));
+        setMaximumSize(new java.awt.Dimension(1052, 646));
+        setMinimumSize(new java.awt.Dimension(1052, 646));
+        setPreferredSize(new java.awt.Dimension(1052, 646));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -247,33 +245,8 @@ public class MainMenu extends javax.swing.JFrame {
         SIS.setText("Student Information System");
         MainMenu.add(SIS, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 330, 50));
 
-        addNP.setText("Add New Program");
-        addNP.setFocusable(false);
-        addNP.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addNPMouseClicked(evt);
-            }
-        });
-        MainMenu.add(addNP, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 160, 30));
-
-        addNC.setText("Add New College");
-        addNC.setFocusable(false);
-        addNC.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addNCMouseClicked(evt);
-            }
-        });
-        MainMenu.add(addNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 160, 30));
-
-        programList.setText("Program List");
-        programList.setFocusable(false);
-        MainMenu.add(programList, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 160, 30));
-
-        collegeList.setText("College List");
-        collegeList.setFocusable(false);
-        MainMenu.add(collegeList, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 160, 30));
-
         studentTable.setAutoCreateRowSorter(true);
+        studentTable.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         studentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -309,91 +282,135 @@ public class MainMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        studentTable.setFocusable(false);
         studentTable.setName(""); // NOI18N
-        jScrollPane1.setViewportView(studentTable);
-
-        MainMenu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 1060, -1));
-
-        idLabel7.setText("ID NUMBER");
-        MainMenu.add(idLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 120, 30));
-
-        idLabel8.setText("COLLEGE CODE");
-        MainMenu.add(idLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 120, 30));
-
-        idLabel9.setText("FIRST NAME");
-        MainMenu.add(idLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 120, 30));
-
-        idLabel10.setText("LAST NAME");
-        MainMenu.add(idLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 120, 30));
-
-        idLabel11.setText("YEAR LEVEL");
-        MainMenu.add(idLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 120, 30));
-
-        idLabel12.setText("GENDER");
-        MainMenu.add(idLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 110, 30));
-
-        idLabel13.setText("PROGRAM CODE");
-        MainMenu.add(idLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 120, 30));
-
-        firstNameField1.setEditable(false);
-        firstNameField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        firstNameField1.setFocusable(false);
-        MainMenu.add(firstNameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 130, 30));
-        MainMenu.add(lastNameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 130, 30));
-
-        lastNameField2.setEditable(false);
-        lastNameField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lastNameField2.setFocusable(false);
-        MainMenu.add(lastNameField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 130, 30));
-
-        lastNameField3.setEditable(false);
-        lastNameField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lastNameField3.setFocusable(false);
-        MainMenu.add(lastNameField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 130, 30));
-
-        lastNameField4.setEditable(false);
-        lastNameField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lastNameField4.setFocusable(false);
-        MainMenu.add(lastNameField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 100, 30));
-
-        lastNameField5.setEditable(false);
-        lastNameField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lastNameField5.setFocusable(false);
-        MainMenu.add(lastNameField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 100, 30));
-
-        lastNameField6.setEditable(false);
-        lastNameField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lastNameField6.setFocusable(false);
-        MainMenu.add(lastNameField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 130, 30));
-
-        jButton2.setText("SAVE");
-        MainMenu.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 90, 20));
-
-        jButton1.setText("CANCEL");
-        MainMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 550, 100, 20));
-
-        jButton4.setText("EDIT");
-        MainMenu.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 90, 20));
-
-        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 640));
-
-        jMenu1.setText("SSIS");
-
-        addStudent.setText("Add Student");
-        addStudent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                addStudentMouseReleased(evt);
+        studentTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                studentTableMouseClicked(evt);
             }
         });
-        jMenu1.add(addStudent);
+        jScrollPane1.setViewportView(studentTable);
 
-        jMenuItem2.setText("Add Program");
-        jMenu1.add(jMenuItem2);
+        MainMenu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 710, -1));
 
-        jMenuItem3.setText("New College");
-        jMenu1.add(jMenuItem3);
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setMaximumSize(new java.awt.Dimension(260, 310));
+        jPanel1.setMinimumSize(new java.awt.Dimension(260, 310));
+        jPanel1.setPreferredSize(new java.awt.Dimension(260, 310));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jMenuBar1.add(jMenu1);
+        idLabel13.setText("PROGRAM CODE");
+        jPanel1.add(idLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 120, 30));
+
+        programCodeField.setEditable(false);
+        programCodeField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        programCodeField.setFocusable(false);
+        jPanel1.add(programCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 100, 30));
+
+        collegeCodeField.setEditable(false);
+        collegeCodeField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        collegeCodeField.setFocusable(false);
+        jPanel1.add(collegeCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 100, 30));
+
+        idLabel8.setText("COLLEGE CODE");
+        jPanel1.add(idLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 120, 30));
+
+        idLabel12.setText("GENDER");
+        jPanel1.add(idLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, 30));
+
+        genderField.setEditable(false);
+        genderField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        genderField.setFocusable(false);
+        jPanel1.add(genderField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 130, 30));
+
+        yearLevelField.setEditable(false);
+        yearLevelField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        yearLevelField.setFocusable(false);
+        jPanel1.add(yearLevelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 130, 30));
+
+        idLabel11.setText("YEAR LEVEL");
+        jPanel1.add(idLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 120, 30));
+
+        idLabel10.setText("LAST NAME");
+        jPanel1.add(idLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, 30));
+
+        lastNameLabel.setEditable(false);
+        lastNameLabel.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lastNameLabel.setFocusable(false);
+        jPanel1.add(lastNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 130, 30));
+
+        firstNameLabel.setEditable(false);
+        firstNameLabel.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        firstNameLabel.setFocusable(false);
+        jPanel1.add(firstNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 130, 30));
+
+        idLabel9.setText("FIRST NAME");
+        jPanel1.add(idLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 120, 30));
+
+        idLabel7.setText("ID NUMBER");
+        jPanel1.add(idLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 30));
+
+        idNumberField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(idNumberField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 130, 30));
+
+        editButton.setText("EDIT");
+        editButton.setEnabled(false);
+        editButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editButtonMouseClicked(evt);
+            }
+        });
+        jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, -1, 20));
+
+        saveButton.setText("SAVE");
+        saveButton.setEnabled(false);
+        saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveButtonMouseClicked(evt);
+            }
+        });
+        jPanel1.add(saveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, 20));
+
+        cancel.setText("CANCEL");
+        cancel.setEnabled(false);
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelMouseClicked(evt);
+            }
+        });
+        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, 20));
+
+        MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 260, 340));
+
+        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 620));
+
+        SSIS.setText("SSIS");
+
+        newStudent.setText("New Student");
+        newStudent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                newStudentMouseReleased(evt);
+            }
+        });
+        SSIS.add(newStudent);
+
+        newProgram.setText("New Program");
+        newProgram.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                newProgramMouseReleased(evt);
+            }
+        });
+        SSIS.add(newProgram);
+
+        neweCollege.setText("New College");
+        neweCollege.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                neweCollegeMouseReleased(evt);
+            }
+        });
+        SSIS.add(neweCollege);
+
+        jMenuBar1.add(SSIS);
 
         jMenu4.setText("Settings");
         jMenuBar1.add(jMenu4);
@@ -411,29 +428,9 @@ public class MainMenu extends javax.swing.JFrame {
         AddCollegeDialog.dispose();
     }//GEN-LAST:event_cancelButtonAddCMouseClicked
 
-    private void addNCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNCMouseClicked
-        AddCollegeDialog.setLocationByPlatform(true);
-        AddCollegeDialog.setVisible(true);
-    }//GEN-LAST:event_addNCMouseClicked
-
     private void cancelButtonAddPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelButtonAddPMouseClicked
         AddProgramDialog.dispose();
     }//GEN-LAST:event_cancelButtonAddPMouseClicked
-
-    private void addNPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNPMouseClicked
-        AddCollegeDialog.setLocationByPlatform(true);
-        AddProgramDialog.setVisible(true);
-        
-        //load all available college code in the comboBox
-        comboBoxCC.removeAllItems();
-        
-        for(int i = 0; i < Main.college.length; i++){
-            if(Main.END.equals(Main.college[i].getCollegeCode())){
-                break;
-            }
-             comboBoxCC.addItem(Main.college[i].getCollegeCode());
-        }
-    }//GEN-LAST:event_addNPMouseClicked
 
     private void addButtonCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonCMouseClicked
         
@@ -558,13 +555,14 @@ public class MainMenu extends javax.swing.JFrame {
                 lastNameField.setText(null);
                 comboBoxP.removeAllItems();
                 AddStudentDialog.dispose();
+                loadStudentData();
                 break;
             }
             
         }
     }//GEN-LAST:event_confirmButtonMouseClicked
 
-    private void addStudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addStudentMouseReleased
+    private void newStudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newStudentMouseReleased
        
         AddStudentDialog.setLocationByPlatform(true);
         
@@ -605,11 +603,146 @@ public class MainMenu extends javax.swing.JFrame {
         idFieldNS.setText(num);
         
         AddStudentDialog.setVisible(true);
-    }//GEN-LAST:event_addStudentMouseReleased
+    }//GEN-LAST:event_newStudentMouseReleased
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        saveButton.setVisible(false);
+        cancel.setVisible(false);
+        loadStudentData();
         
     }//GEN-LAST:event_formWindowActivated
+
+    private void newProgramMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newProgramMouseReleased
+        AddCollegeDialog.setLocationByPlatform(true);
+       
+        
+        //load all available college code in the comboBox
+        comboBoxCC.removeAllItems();
+        
+        for(int i = 0; i < Main.college.length; i++){
+            if(Main.END.equals(Main.college[i].getCollegeCode())){
+                break;
+            }
+             comboBoxCC.addItem(Main.college[i].getCollegeCode());
+        }
+        AddProgramDialog.setVisible(true);
+    }//GEN-LAST:event_newProgramMouseReleased
+
+    private void neweCollegeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_neweCollegeMouseReleased
+        AddCollegeDialog.setLocationByPlatform(true);
+        AddCollegeDialog.setVisible(true);
+    }//GEN-LAST:event_neweCollegeMouseReleased
+
+    private void studentTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentTableMouseClicked
+       getRowData();
+    }//GEN-LAST:event_studentTableMouseClicked
+
+    private void editButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseClicked
+
+        editButton.setVisible(false);
+        editButton.setEnabled(false);
+        
+        saveButton.setVisible(true);
+        cancel.setVisible(true);
+        saveButton.setEnabled(true);
+        cancel.setEnabled(true);
+
+        studentTable.setFocusable(false);
+        studentTable.setEnabled(false);
+        SSIS.setEnabled(false);
+
+        idNumberField.setEditable(false);
+        idNumberField.setFocusable(false);
+
+        firstNameLabel.setEditable(true);
+        firstNameLabel.setFocusable(true);
+
+        lastNameLabel.setEditable(true);
+        lastNameLabel.setFocusable(true);
+
+        yearLevelField.setEditable(true);
+        yearLevelField.setFocusable(true);
+
+        genderField.setEditable(true);
+        genderField.setFocusable(true);
+
+        collegeCodeField.setEditable(true);
+        collegeCodeField.setFocusable(true);
+
+        programCodeField.setEditable(true);
+        programCodeField.setFocusable(true);
+    }//GEN-LAST:event_editButtonMouseClicked
+
+    private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
+
+        saveButton.setEnabled(false);
+        cancel.setEnabled(false);
+
+        editButton.setVisible(true);
+        saveButton.setVisible(false);
+        cancel.setVisible(false);
+        
+        studentTable.setFocusable(true);
+        studentTable.setEnabled(true);
+        SSIS.setEnabled(true);
+
+        idNumberField.setEditable(true);
+        idNumberField.setFocusable(true);
+
+        firstNameLabel.setEditable(false);
+        firstNameLabel.setFocusable(false);
+
+        lastNameLabel.setEditable(false);
+        lastNameLabel.setFocusable(false);
+
+        yearLevelField.setEditable(false);
+        yearLevelField.setFocusable(false);
+
+        genderField.setEditable(false);
+        genderField.setFocusable(false);
+
+        collegeCodeField.setEditable(false);
+        collegeCodeField.setFocusable(false);
+
+        programCodeField.setEditable(false);
+        programCodeField.setFocusable(false);
+    }//GEN-LAST:event_saveButtonMouseClicked
+
+    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
+
+        saveButton.setEnabled(false);
+        cancel.setEnabled(false);
+        saveButton.setVisible(false);
+        
+        editButton.setVisible(true);
+        saveButton.setVisible(false);
+        
+        studentTable.setFocusable(true);
+        studentTable.setEnabled(true);
+        SSIS.setEnabled(true);
+
+        idNumberField.setEditable(true);
+        idNumberField.setFocusable(true);
+
+        firstNameLabel.setEditable(false);
+        firstNameLabel.setFocusable(false);
+
+        lastNameLabel.setEditable(false);
+        lastNameLabel.setFocusable(false);
+
+        yearLevelField.setEditable(false);
+        yearLevelField.setFocusable(false);
+
+        genderField.setEditable(false);
+        genderField.setFocusable(false);
+
+        collegeCodeField.setEditable(false);
+        collegeCodeField.setFocusable(false);
+
+        programCodeField.setEditable(false);
+        programCodeField.setFocusable(false);
+        getRowData();
+    }//GEN-LAST:event_cancelMouseClicked
 
    
     public static String genNum(){
@@ -641,32 +774,101 @@ public class MainMenu extends javax.swing.JFrame {
         }
        return temp;
     }
+    
+    public static void loadStudentData(){
+    
+         studentTable.getTableHeader().setResizingAllowed(false);
+        studentTable.getTableHeader().setReorderingAllowed(false);
+
+        //load the studentData
+        
+
+        int count = 0;
+        while(count < Main.student.length){
+            if(Main.END.equals(Main.student[count].getIdNum())){
+                break;
+            }
+            count++;
+        }
+        
+     
+        // [FORMAT]: IdNum/Firstname/Lastname/YearLevel/Gender/CollegeCode/ProgramCode
+        String studentFormat[] = { "ID Number", "First Name", "Last Name", "Year Level", "Gender", "College Code", "Program Code"};
+        
+        Object[][] studentData = new Object[count][Main.STUDENTDATA_FORMAT];
+ 
+        for(int i = 0; i <  Main.student.length; i++){
+            
+          
+            if(Main.END.equals(Main.student[i].getIdNum())){
+                break;
+            }
+            
+            studentData[i][0] = Main.student[i].getIdNum();
+            studentData[i][1] = Main.student[i].getFirstName();
+            studentData[i][2] = Main.student[i].getLastName();
+            studentData[i][3] = Main.student[i].getYearLevel();
+            studentData[i][4] = Main.student[i].getGender();
+            studentData[i][5] = Main.student[i].getCollegeCode();
+            studentData[i][6] = Main.student[i].getProgramCode();
+            
+        
+        }
+        
+        
+        DefaultTableModel model = new DefaultTableModel(studentData, studentFormat);
+        studentTable.setModel(model);
+        
+    
+    
+}
+    
+    public static void getRowData(){
+         //get the row data to load in the individual label
+        int selectedRow = studentTable.getSelectedRow();
+        
+        if(selectedRow != -1){
+            
+            editButton.setEnabled(true);
+          
+            
+            idNumberField.setText( (String) studentTable.getValueAt(selectedRow, 0));
+            firstNameLabel.setText( (String) studentTable.getValueAt(selectedRow, 1));
+            lastNameLabel.setText( (String) studentTable.getValueAt(selectedRow, 2));
+            yearLevelField.setText( (String) studentTable.getValueAt(selectedRow, 3));
+            genderField.setText( (String) studentTable.getValueAt(selectedRow, 4));
+            collegeCodeField.setText( (String) studentTable.getValueAt(selectedRow, 5));
+            programCodeField.setText( (String) studentTable.getValueAt(selectedRow, 6));
+        }
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JDialog AddCollegeDialog;
     public static javax.swing.JDialog AddProgramDialog;
     public static javax.swing.JDialog AddStudentDialog;
     public static javax.swing.JPanel MainMenu;
     public static javax.swing.JLabel SIS;
+    public static javax.swing.JMenu SSIS;
     public static javax.swing.JButton addButtonC;
     public static javax.swing.JButton addButtonP;
-    public static javax.swing.JButton addNC;
-    public static javax.swing.JButton addNP;
-    public static javax.swing.JMenuItem addStudent;
+    public static javax.swing.JButton cancel;
     public static javax.swing.JButton cancelButton;
     public static javax.swing.JButton cancelButtonAddC;
     public static javax.swing.JButton cancelButtonAddP;
     public static javax.swing.JTextField codeFieldC;
     public static javax.swing.JTextField codeFieldP;
-    public static javax.swing.JButton collegeList;
+    public static javax.swing.JTextField collegeCodeField;
     public static javax.swing.JComboBox<String> comboBoxCC;
     public static javax.swing.JComboBox<String> comboBoxCCStudent;
     public static javax.swing.JComboBox<String> comboBoxP;
     public static javax.swing.JComboBox<String> comboBoxY;
     public static javax.swing.JComboBox<String> comboBoxYL;
     public static javax.swing.JButton confirmButton;
+    public static javax.swing.JButton editButton;
     public static javax.swing.JRadioButton female;
     public static javax.swing.JTextField firstNameField;
-    public static javax.swing.JTextField firstNameField1;
+    public static javax.swing.JTextField firstNameLabel;
+    public static javax.swing.JTextField genderField;
     public static javax.swing.ButtonGroup genderGroup;
     public static javax.swing.JTextField idFieldNS;
     public static javax.swing.JLabel idLabel;
@@ -683,32 +885,28 @@ public class MainMenu extends javax.swing.JFrame {
     public static javax.swing.JLabel idLabel7;
     public static javax.swing.JLabel idLabel8;
     public static javax.swing.JLabel idLabel9;
-    public static javax.swing.JButton jButton1;
-    public static javax.swing.JButton jButton2;
-    public static javax.swing.JButton jButton4;
+    public static javax.swing.JTextField idNumberField;
     public static javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel jLabel3;
     public static javax.swing.JLabel jLabel4;
     public static javax.swing.JLabel jLabel5;
-    public static javax.swing.JMenu jMenu1;
     public static javax.swing.JMenu jMenu3;
     public static javax.swing.JMenu jMenu4;
     public static javax.swing.JMenuBar jMenuBar1;
-    public static javax.swing.JMenuItem jMenuItem2;
-    public static javax.swing.JMenuItem jMenuItem3;
+    public static javax.swing.JPanel jPanel1;
     public static javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTextField lastNameField;
-    public static javax.swing.JTextField lastNameField1;
-    public static javax.swing.JTextField lastNameField2;
-    public static javax.swing.JTextField lastNameField3;
-    public static javax.swing.JTextField lastNameField4;
-    public static javax.swing.JTextField lastNameField5;
-    public static javax.swing.JTextField lastNameField6;
+    public static javax.swing.JTextField lastNameLabel;
     public static javax.swing.JRadioButton male;
     public static javax.swing.JTextField nameFieldC;
     public static javax.swing.JTextField nameFieldP;
-    public static javax.swing.JButton programList;
+    public static javax.swing.JMenuItem newProgram;
+    public static javax.swing.JMenuItem newStudent;
+    public static javax.swing.JMenuItem neweCollege;
+    public static javax.swing.JTextField programCodeField;
+    public static javax.swing.JButton saveButton;
     public static javax.swing.JTable studentTable;
+    public static javax.swing.JTextField yearLevelField;
     // End of variables declaration//GEN-END:variables
 }

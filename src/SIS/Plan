@@ -42,3 +42,8 @@ Problems encountered
 - the showLabel in MainMenu does not function properly
 
 -the modality cant block the other window on college and program dialog
+
+
+feb 5
+-revamp main ui - Done
+-load studentData in the studentTable(list) - Done

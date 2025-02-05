@@ -8,7 +8,7 @@ import SIS.Components.Objects.Student;
 
 import SIS.Components.Read;
 
-import SIS.Components.Frames.MainMenu;
+import SIS.Components.Frames.MainWindow;
 import com.formdev.flatlaf.FlatDarkLaf;
 
 import javax.swing.*;
@@ -40,7 +40,7 @@ public class Main {
     public static String Years[] = new String[50];
     
     //Frames
-    public static MainMenu menu;
+    public static MainWindow menu;
     
     public static void main(String[] args) {
         
@@ -74,7 +74,7 @@ public class Main {
     }
     
     public static void showMenuForm(){  
-        menu = new MainMenu();
+        menu = new MainWindow();
         menu.setVisible(true);
     }
     
