@@ -1,5 +1,5 @@
 
-package SIS.Components.Objects;
+package SIS.com.objects;
 
 
 public class College {

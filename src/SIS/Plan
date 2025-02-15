@@ -29,16 +29,18 @@ Pending:
 create a loading screen 
 flag if info is not complete
 minimize constants
-set look and feel to flat Laf Dark
+set look and feel to flat Laf Dark - DOne
 
 checkpoints
 need to sort the students by IdNum
+
 Done:
 read data from csv doc
 
 
 
 Problems encountered
+
 - the showLabel in MainMenu does not function properly
 
 -the modality cant block the other window on college and program dialog
@@ -47,3 +49,19 @@ Problems encountered
 feb 5
 -revamp main ui - Done
 -load studentData in the studentTable(list) - Done
+
+feb 7
+ToDo:
+    make a comboBox for the year level when edit is clicked - Done
+    make a radioButton group for gender option when edit is clicked - Done
+
+feb 11
+ToDo:
+    sort the writer -Done
+feb 15
+ToDo:
+    search bar
+    added a checkpoint for academic year
+
+problem
+    year- should no be editable?.

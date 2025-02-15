@@ -1,11 +1,10 @@
 
-package SIS.Components;
+package SIS.com;
 
 import SIS.Main;
 import java.io.*;
 import java.util.*;
 
-import SIS.Components.Objects.College;
 public class Read {
     
     public static void readCollegeData(){

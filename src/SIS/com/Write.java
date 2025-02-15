@@ -1,11 +1,10 @@
 
-package SIS.Components;
+package SIS.com;
 
 
 import java.io.*;
-import java.util.*;
-
 import SIS.Main;
+
 public class Write {
     
     public static void writeCollege(){
@@ -103,7 +102,7 @@ public class Write {
 
             count = 0;
             indicator = 0;
-
+            
             while(indicator < Main.student.length){
                 
                 indicator++;

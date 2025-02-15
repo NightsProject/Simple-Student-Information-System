@@ -2,16 +2,14 @@
 package SIS;
 
 
-import SIS.Components.Objects.College;
-import SIS.Components.Objects.Program;
-import SIS.Components.Objects.Student;
+import SIS.com.objects.College;
+import SIS.com.objects.Program;
+import SIS.com.objects.Student;
 
-import SIS.Components.Read;
+import SIS.com.Read;
 
-import SIS.Components.Frames.MainWindow;
+import SIS.com.frames.MainWindow;
 import com.formdev.flatlaf.FlatDarkLaf;
-
-import javax.swing.*;
 
 public class Main {
     
@@ -78,5 +76,5 @@ public class Main {
         menu.setVisible(true);
     }
     
-   
+  
 }
