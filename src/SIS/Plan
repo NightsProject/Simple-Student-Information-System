@@ -1,0 +1,86 @@
+CRUDL
+
+Create
+    add student
+    -generate ID when you clicked add student button (Lock the object array[number])
+        - the generated id would then be added directly to the array
+        year + generated number from 0000
+        Year = editable and automatically read from the csv 
+    
+    add college
+        -add dialog - done
+        -write to csv - done
+
+Read - Finished
+    initiation of the software:
+        read the csv's -> load datas to object array
+
+        
+
+Update
+    
+Delete
+
+List
+
+TODO:
+
+Pending:
+create a loading screen 
+flag if info is not complete
+minimize constants
+set look and feel to flat Laf Dark - Done
+
+checkpoints
+need to sort the students by IdNum
+
+Done:
+read data from csv doc
+
+
+
+Problems encountered
+
+- the showLabel in MainMenu does not function properly
+
+-the modality cant block the other window on college and program dialog
+
+
+feb 5
+-revamp main ui - Done
+-load studentData in the studentTable(list) - Done
+
+feb 7
+ToDo:
+    make a comboBox for the year level when edit is clicked - Done
+    make a radioButton group for gender option when edit is clicked - Done
+
+feb 11
+ToDo:
+
+    sort the writer -Done
+
+feb 15
+ToDo:
+    search bar
+    added a checkpoint for academic year
+    delete a data
+
+problem
+    year- should no be editable?.
+   
+
+feb 21
+ToDo:
+  search algo 
+    search by id num - done
+    search by firstname - done
+    search by lastname - done
+    search by year level - done
+    search by gender - done
+    search by program code - done
+    search by college code - done
+
+  add image for search icon
+
+    load all function- data should be wiped out in the labels -pending
