@@ -144,8 +144,6 @@ public class MainWindow extends javax.swing.JFrame {
         newStudent = new javax.swing.JMenuItem();
         newProgram = new javax.swing.JMenuItem();
         neweCollege = new javax.swing.JMenuItem();
-        viewMenu = new javax.swing.JMenu();
-        collegeList = new javax.swing.JMenuItem();
         reportMenu = new javax.swing.JMenu();
         settings = new javax.swing.JMenu();
         about = new javax.swing.JMenu();
@@ -823,18 +821,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         SSIS.add(newMenu);
 
-        viewMenu.setText("View");
-
-        collegeList.setText("College");
-        collegeList.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                collegeListMouseReleased(evt);
-            }
-        });
-        viewMenu.add(collegeList);
-
-        SSIS.add(viewMenu);
-
         menuBar.add(SSIS);
 
         reportMenu.setText("Reports");
@@ -1292,10 +1278,6 @@ public class MainWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cancelMouseClicked
 
-    private void collegeListMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_collegeListMouseReleased
-        ViewCollegeListDialog.setVisible(true);
-    }//GEN-LAST:event_collegeListMouseReleased
-
     private void comboBoxCCodeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxCCodeItemStateChanged
          
         if(evt.getStateChange() == ItemEvent.SELECTED){
@@ -1518,6 +1500,8 @@ public class MainWindow extends javax.swing.JFrame {
                loadFilteredStudentData(s -> search.equals(s.getCollegeCode()));
            }
            
+       } else {
+           loadStudentData();
        }
     
 }
@@ -1682,9 +1666,21 @@ public class MainWindow extends javax.swing.JFrame {
         collegeTable.setModel(model);
         
         collegeTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        collegeTable.getColumnModel().getColumn(0).setPreferredWidth(125);
-        collegeTable.getColumnModel().getColumn(1).setPreferredWidth(363);
+        int size = collegeTable.getSize().width;
+        
+        float one = size * .3f;
+        float two = size * .701f;
+        
+        collegeTable.getColumnModel().getColumn(0).setPreferredWidth((int) one);
+        collegeTable.getColumnModel().getColumn(1).setPreferredWidth((int) two);
        
+           
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        collegeTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+        
+        
+        
         //make the cell not selectable
         collegeTable.setDefaultEditor(Object.class, null);
         
@@ -1740,9 +1736,20 @@ public class MainWindow extends javax.swing.JFrame {
         programTable.setModel(model);
         
         programTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        programTable.getColumnModel().getColumn(0).setPreferredWidth(125);
-        programTable.getColumnModel().getColumn(1).setPreferredWidth(468);
-        programTable.getColumnModel().getColumn(2).setPreferredWidth(125);
+        int size = programTable.getSize().width;
+        
+        float one = size * .2f;
+        float two = size * .603f;
+        
+        programTable.getColumnModel().getColumn(0).setPreferredWidth((int)one);
+        programTable.getColumnModel().getColumn(1).setPreferredWidth((int)two);
+        programTable.getColumnModel().getColumn(2).setPreferredWidth((int)one);
+        
+                   
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        programTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+        programTable.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
         
         //make the cell not selectable
         programTable.setDefaultEditor(Object.class, null);
@@ -1908,7 +1915,6 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField codeFieldC;
     public static javax.swing.JTextField codeFieldP;
     public static javax.swing.JTextField collegeCodeField;
-    public static javax.swing.JMenuItem collegeList;
     public static javax.swing.JPanel collegeListPanel;
     public static javax.swing.JTable collegeTable;
     public static javax.swing.JComboBox<String> comboBoxCC;
@@ -2014,7 +2020,6 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField searchField;
     public static javax.swing.JMenu settings;
     public static javax.swing.JTable studentTable;
-    public static javax.swing.JMenu viewMenu;
     public static javax.swing.JTextField yearLevelField;
     // End of variables declaration//GEN-END:variables
 }
