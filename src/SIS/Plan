@@ -62,9 +62,9 @@ ToDo:
 
 feb 15
 ToDo:
-    search bar
-    added a checkpoint for academic year
-    delete a data
+    search bar - done
+    added a checkpoint for academic year -done
+    delete a data -done
 
 problem
     year- should no be editable?.
@@ -81,6 +81,31 @@ ToDo:
     search by program code - done
     search by college code - done
 
-  add image for search icon
+    add image for search icon
 
-    load all function- data should be wiped out in the labels -pending
+    load all function- data should be wiped out in the labels -done
+
+feb 22
+ToDo
+    create a highlight function
+    choose colors for the gui themed green
+    add a method for comparison if the id number is not in taken
+    add a year filter
+    add a metrics based on the studentTable
+    
+feb 23
+ToDo
+    create a defaults config file
+
+    added checkpoints for adding a new student - done
+    add a checkpoint for adding college
+    add a checkpoint for adding program 
+    add a checkpoint in save button main window
+    fix layout
+
+    fix the college table
+    fix the program table
+
+bug 
+    the uniqueNumGen don't generate a 0001 id after i deleted it
+        -manually provide it

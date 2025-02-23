@@ -27,6 +27,6 @@ public class College {
     }
     
     public String collegeData(){
-        return collegeCode + "/" + collegeName;
+        return collegeCode + "," + collegeName;
     }
 }

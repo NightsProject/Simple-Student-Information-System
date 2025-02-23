@@ -89,7 +89,7 @@ public class Student extends Program{
     }
 
     public String studentData(){
-        return idNum + "/" + firstName + "/" + lastName + "/" + yearLevel + "/" + gender + "/" + collegeCode + "/" + programCode;
+        return idNum + "," + firstName + "," + lastName + "," + yearLevel + "," + gender + "," + programCode + "," + collegeCode;
     }
 
     public static void sortObjectArray(){

@@ -72,6 +72,9 @@ public class Main {
         Initialize.readyFiles();
         Read.readDataCsv();
        
+        Years[0] = "2024";
+        Years[1] = "2025";
+        
         
         showMenuForm();
         

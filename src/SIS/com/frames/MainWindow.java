@@ -68,10 +68,6 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         programCodeField4 = new javax.swing.JTextField();
         genderField2 = new javax.swing.JTextField();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        collegeTable = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        programTable = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         programCodeField2 = new javax.swing.JTextField();
@@ -81,6 +77,7 @@ public class MainWindow extends javax.swing.JFrame {
         programCodeField5 = new javax.swing.JTextField();
         genderG = new javax.swing.ButtonGroup();
         jSpinner1 = new javax.swing.JSpinner();
+        jMenuItem1 = new javax.swing.JMenuItem();
         MainMenu = new javax.swing.JPanel();
         SIS = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -103,13 +100,13 @@ public class MainWindow extends javax.swing.JFrame {
         saveButton = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         comboBoxCCode = new javax.swing.JComboBox<>();
-        comboBoxSP = new javax.swing.JComboBox<>();
         comboBoxYearL = new javax.swing.JComboBox<>();
         genderField = new javax.swing.JTextField();
         femaleG = new javax.swing.JRadioButton();
         maleG = new javax.swing.JRadioButton();
         delete = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
+        comboBoxSP = new javax.swing.JComboBox<>();
         searchField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         comboBoxSearch = new javax.swing.JComboBox<>();
@@ -117,6 +114,30 @@ public class MainWindow extends javax.swing.JFrame {
         searchButton = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        collegeListPanel = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        collegeTable = new javax.swing.JTable();
+        idLabel17 = new javax.swing.JLabel();
+        idLabel18 = new javax.swing.JLabel();
+        programCodeField8 = new javax.swing.JTextField();
+        programCodeField7 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        programListPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        programTable = new javax.swing.JTable();
+        idLabel16 = new javax.swing.JLabel();
+        programCodeField9 = new javax.swing.JTextField();
+        idLabel19 = new javax.swing.JLabel();
+        programCodeField1 = new javax.swing.JTextField();
+        idLabel15 = new javax.swing.JLabel();
+        programCodeField6 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         SSIS = new javax.swing.JMenu();
         newMenu = new javax.swing.JMenu();
@@ -129,8 +150,10 @@ public class MainWindow extends javax.swing.JFrame {
         settings = new javax.swing.JMenu();
         about = new javax.swing.JMenu();
 
-        AddCollegeDialog.setTitle("Add College");
+        AddCollegeDialog.setTitle("New College");
+        AddCollegeDialog.setLocationByPlatform(true);
         AddCollegeDialog.setMinimumSize(new java.awt.Dimension(266, 160));
+        AddCollegeDialog.setType(java.awt.Window.Type.UTILITY);
         AddCollegeDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("College Code");
@@ -157,7 +180,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
         AddCollegeDialog.getContentPane().add(addButtonC, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 80, -1));
 
-        AddProgramDialog.setTitle("Add College");
+        AddProgramDialog.setTitle("New Program");
         AddProgramDialog.setMinimumSize(new java.awt.Dimension(286, 201));
         AddProgramDialog.setModal(true);
         AddProgramDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -197,7 +220,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         idLabel.setFont(new java.awt.Font("sansserif", 0, 13)); // NOI18N
         idLabel.setText("ID NUMBER");
-        AddStudentDialog.getContentPane().add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 120, 30));
+        AddStudentDialog.getContentPane().add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 120, 30));
 
         idLabel1.setText("COLLEGE CODE");
         AddStudentDialog.getContentPane().add(idLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 120, 20));
@@ -209,33 +232,39 @@ public class MainWindow extends javax.swing.JFrame {
         AddStudentDialog.getContentPane().add(idLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 120, 20));
 
         idLabel4.setText("YEAR LEVEL");
-        AddStudentDialog.getContentPane().add(idLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 120, 10));
+        AddStudentDialog.getContentPane().add(idLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 120, 10));
 
         idLabel5.setText("GENDER");
-        AddStudentDialog.getContentPane().add(idLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 110, 20));
+        AddStudentDialog.getContentPane().add(idLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 110, 20));
 
         idLabel6.setText("PROGRAM CODE");
-        AddStudentDialog.getContentPane().add(idLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 120, 20));
+        AddStudentDialog.getContentPane().add(idLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 120, 20));
 
+        comboBoxP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        comboBoxP.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxPItemStateChanged(evt);
+            }
+        });
         comboBoxP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 comboBoxPFocusLost(evt);
             }
         });
-        AddStudentDialog.getContentPane().add(comboBoxP, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 150, 30));
+        AddStudentDialog.getContentPane().add(comboBoxP, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 150, 30));
         AddStudentDialog.getContentPane().add(firstNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 150, 30));
         AddStudentDialog.getContentPane().add(lastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 150, 30));
 
         genderGroup.add(male);
         male.setSelected(true);
         male.setText("Male");
-        AddStudentDialog.getContentPane().add(male, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, 30));
+        AddStudentDialog.getContentPane().add(male, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, 30));
 
         genderGroup.add(female);
         female.setText("female");
-        AddStudentDialog.getContentPane().add(female, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, 30));
+        AddStudentDialog.getContentPane().add(female, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, 30));
 
-        comboBoxCCStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxCCStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         comboBoxCCStudent.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comboBoxCCStudentItemStateChanged(evt);
@@ -253,7 +282,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         idFieldNS.setEditable(false);
         idFieldNS.setFocusable(false);
-        AddStudentDialog.getContentPane().add(idFieldNS, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 150, 30));
+        AddStudentDialog.getContentPane().add(idFieldNS, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 150, 30));
 
         confirmButton.setText("CONFIRM");
         confirmButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -264,7 +293,7 @@ public class MainWindow extends javax.swing.JFrame {
         AddStudentDialog.getContentPane().add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 90, -1));
 
         comboBoxYL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
-        AddStudentDialog.getContentPane().add(comboBoxYL, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 150, 30));
+        AddStudentDialog.getContentPane().add(comboBoxYL, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 150, 30));
 
         comboBoxY.setEditable(true);
         comboBoxY.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024", "2025", "2026" }));
@@ -282,6 +311,7 @@ public class MainWindow extends javax.swing.JFrame {
         ViewCollegeListDialog.setLocationByPlatform(true);
         ViewCollegeListDialog.setMinimumSize(new java.awt.Dimension(1051, 478));
         ViewCollegeListDialog.setResizable(false);
+        ViewCollegeListDialog.setType(java.awt.Window.Type.UTILITY);
         ViewCollegeListDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -304,36 +334,6 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel4.add(genderField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 130, 30));
 
         ViewCollegeListDialog.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 260, 190));
-
-        collegeTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "College Code", "College Name"
-            }
-        ));
-        jScrollPane4.setViewportView(collegeTable);
-
-        ViewCollegeListDialog.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 490, 190));
-
-        programTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Program Code", "Program Name", "College Code"
-            }
-        ));
-        jScrollPane2.setViewportView(programTable);
-
-        ViewCollegeListDialog.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 720, 240));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -363,6 +363,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         ViewCollegeListDialog.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 270, 240));
 
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Student Information System");
         setMinimumSize(new java.awt.Dimension(1010, 407));
@@ -381,9 +383,10 @@ public class MainWindow extends javax.swing.JFrame {
         SIS.setForeground(new java.awt.Color(215, 243, 220));
         SIS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SIS.setText("Student Information System");
-        MainMenu.add(SIS, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 390, 30));
+        MainMenu.add(SIS, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 390, 30));
 
         jScrollPane1.setBackground(new java.awt.Color(20, 51, 37));
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 0, 13), new java.awt.Color(255, 255, 0))); // NOI18N
 
         studentTable.setAutoCreateRowSorter(true);
         studentTable.setBackground(new java.awt.Color(20, 51, 37));
@@ -438,7 +441,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(studentTable);
 
-        MainMenu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 860, 410));
+        MainMenu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 860, 340));
 
         jPanel1.setBackground(new java.awt.Color(23, 58, 43));
         jPanel1.setMaximumSize(new java.awt.Dimension(260, 310));
@@ -452,12 +455,14 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel1.add(idLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 130, 30));
 
         programCodeField.setBackground(new java.awt.Color(32, 79, 57));
+        programCodeField.setForeground(new java.awt.Color(215, 243, 220));
         programCodeField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         programCodeField.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         programCodeField.setFocusable(false);
         jPanel1.add(programCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 100, 30));
 
         collegeCodeField.setBackground(new java.awt.Color(32, 79, 57));
+        collegeCodeField.setForeground(new java.awt.Color(215, 243, 220));
         collegeCodeField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         collegeCodeField.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         collegeCodeField.setFocusable(false);
@@ -475,6 +480,7 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel1.add(idLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, 30));
 
         yearLevelField.setBackground(new java.awt.Color(32, 79, 57));
+        yearLevelField.setForeground(new java.awt.Color(215, 243, 220));
         yearLevelField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         yearLevelField.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         yearLevelField.setFocusable(false);
@@ -491,12 +497,14 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel1.add(idLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, 30));
 
         lastNameLabel.setBackground(new java.awt.Color(32, 79, 57));
+        lastNameLabel.setForeground(new java.awt.Color(215, 243, 220));
         lastNameLabel.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         lastNameLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         lastNameLabel.setFocusable(false);
         jPanel1.add(lastNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 130, 30));
 
         firstNameLabel.setBackground(new java.awt.Color(32, 79, 57));
+        firstNameLabel.setForeground(new java.awt.Color(215, 243, 220));
         firstNameLabel.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNameLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         firstNameLabel.setFocusable(false);
@@ -513,12 +521,15 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel1.add(idLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 30));
 
         idNumberField.setBackground(new java.awt.Color(32, 79, 57));
+        idNumberField.setForeground(new java.awt.Color(215, 243, 220));
         idNumberField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         idNumberField.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         idNumberField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         idNumberField.setFocusable(false);
         jPanel1.add(idNumberField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 130, 30));
 
+        editButton.setBackground(new java.awt.Color(20, 51, 37));
+        editButton.setForeground(new java.awt.Color(215, 243, 220));
         editButton.setText("EDIT");
         editButton.setEnabled(false);
         editButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -528,6 +539,8 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, -1, 20));
 
+        saveButton.setBackground(new java.awt.Color(20, 51, 37));
+        saveButton.setForeground(new java.awt.Color(215, 243, 220));
         saveButton.setText("SAVE");
         saveButton.setEnabled(false);
         saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -535,8 +548,10 @@ public class MainWindow extends javax.swing.JFrame {
                 saveButtonMouseClicked(evt);
             }
         });
-        jPanel1.add(saveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, 20));
+        jPanel1.add(saveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, -1, 20));
 
+        cancel.setBackground(new java.awt.Color(20, 51, 37));
+        cancel.setForeground(new java.awt.Color(215, 243, 220));
         cancel.setText("CANCEL");
         cancel.setEnabled(false);
         cancel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -546,6 +561,8 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, 20));
 
+        comboBoxCCode.setBackground(new java.awt.Color(32, 79, 57));
+        comboBoxCCode.setForeground(new java.awt.Color(215, 243, 220));
         comboBoxCCode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxCCode.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -554,27 +571,31 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jPanel1.add(comboBoxCCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 100, 30));
 
-        comboBoxSP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(comboBoxSP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 100, 30));
-
+        comboBoxYearL.setBackground(new java.awt.Color(32, 79, 57));
         comboBoxYearL.setEditable(true);
+        comboBoxYearL.setForeground(new java.awt.Color(215, 243, 220));
         jPanel1.add(comboBoxYearL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 130, 30));
 
         genderField.setBackground(new java.awt.Color(32, 79, 57));
+        genderField.setForeground(new java.awt.Color(215, 243, 220));
         genderField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         genderField.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         genderField.setFocusable(false);
         jPanel1.add(genderField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, 30));
 
         genderG.add(femaleG);
+        femaleG.setForeground(new java.awt.Color(215, 243, 220));
         femaleG.setText("Female");
         jPanel1.add(femaleG, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 70, 30));
 
         genderG.add(maleG);
+        maleG.setForeground(new java.awt.Color(215, 243, 220));
         maleG.setText("Male");
         jPanel1.add(maleG, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 70, 30));
 
-        delete.setText("Delete");
+        delete.setBackground(new java.awt.Color(20, 51, 37));
+        delete.setForeground(new java.awt.Color(215, 243, 220));
+        delete.setText("DELETE");
         delete.setEnabled(false);
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -584,24 +605,32 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 80, 20));
         jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
-        MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 140, 270, 360));
+        comboBoxSP.setBackground(new java.awt.Color(32, 79, 57));
+        comboBoxSP.setForeground(new java.awt.Color(215, 243, 220));
+        comboBoxSP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(comboBoxSP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 100, 30));
+
+        MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 140, 270, 340));
 
         searchField.setBackground(new java.awt.Color(32, 79, 57));
         searchField.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.darkGray, null));
-        MainMenu.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 180, 30));
+        MainMenu.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 180, 30));
 
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(215, 243, 220));
         jLabel6.setText("SEARCH");
-        MainMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, 30));
+        MainMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 60, 30));
 
-        comboBoxSearch.setBackground(new java.awt.Color(20, 51, 37));
+        comboBoxSearch.setBackground(new java.awt.Color(32, 79, 57));
+        comboBoxSearch.setForeground(new java.awt.Color(215, 243, 220));
         comboBoxSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Number", "Firstname", "Lastname", "Year Level", "Gender", "College Code", "Program Code" }));
-        MainMenu.add(comboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, 20));
+        comboBoxSearch.setToolTipText("");
+        MainMenu.add(comboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 110, -1, 20));
 
         jLabel13.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(215, 243, 220));
         jLabel13.setText("SEARCH BY:");
-        MainMenu.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, -1, 10));
+        MainMenu.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, -1, 10));
 
         searchButton.setBackground(new java.awt.Color(0, 0, 0));
         searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -609,7 +638,7 @@ public class MainWindow extends javax.swing.JFrame {
                 searchButtonMouseClicked(evt);
             }
         });
-        MainMenu.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 30, 30));
+        MainMenu.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 30, 30));
 
         jLabel16.setText("Load All");
         jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -617,12 +646,146 @@ public class MainWindow extends javax.swing.JFrame {
                 jLabel16MouseClicked(evt);
             }
         });
-        MainMenu.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, -1, 20));
+        MainMenu.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 110, -1, 20));
 
         jLabel14.setText("v 1.0.1");
-        MainMenu.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, -1));
+        MainMenu.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, -1));
 
-        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 800));
+        jLabel18.setFont(new java.awt.Font("DejaVu Serif", 1, 14)); // NOI18N
+        jLabel18.setText("STUDENTS LIST");
+        MainMenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 51, 0));
+        jSeparator3.setForeground(new java.awt.Color(0, 51, 0));
+        MainMenu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 1110, 10));
+
+        collegeListPanel.setBackground(new java.awt.Color(23, 58, 43));
+        collegeListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        collegeTable.setAutoCreateRowSorter(true);
+        collegeTable.setBackground(new java.awt.Color(20, 51, 37));
+        collegeTable.setForeground(new java.awt.Color(215, 243, 220));
+        collegeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "College Code", "College Name"
+            }
+        ));
+        jScrollPane4.setViewportView(collegeTable);
+
+        collegeListPanel.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 530, 130));
+
+        idLabel17.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        idLabel17.setForeground(new java.awt.Color(215, 243, 220));
+        idLabel17.setText("NAME");
+        collegeListPanel.add(idLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 60, 30));
+
+        idLabel18.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        idLabel18.setForeground(new java.awt.Color(215, 243, 220));
+        idLabel18.setText("COLLEGE CODE");
+        collegeListPanel.add(idLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 120, 30));
+
+        programCodeField8.setBackground(new java.awt.Color(32, 79, 57));
+        programCodeField8.setForeground(new java.awt.Color(215, 243, 220));
+        programCodeField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        programCodeField8.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
+        programCodeField8.setFocusable(false);
+        collegeListPanel.add(programCodeField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 120, 30));
+
+        programCodeField7.setBackground(new java.awt.Color(32, 79, 57));
+        programCodeField7.setForeground(new java.awt.Color(215, 243, 220));
+        programCodeField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        programCodeField7.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
+        programCodeField7.setFocusable(false);
+        collegeListPanel.add(programCodeField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 180, 30));
+
+        jButton4.setText("CANCEL");
+        collegeListPanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, 20));
+
+        jButton3.setText("EDIT");
+        collegeListPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, -1, 20));
+
+        jLabel15.setFont(new java.awt.Font("DejaVu Serif", 1, 14)); // NOI18N
+        jLabel15.setText("COLLEGE LIST");
+        collegeListPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        MainMenu.add(collegeListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 670, -1, -1));
+
+        programListPanel.setBackground(new java.awt.Color(23, 58, 43));
+        programListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        programTable.setAutoCreateRowSorter(true);
+        programTable.setBackground(new java.awt.Color(20, 51, 37));
+        programTable.setForeground(new java.awt.Color(215, 243, 220));
+        programTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Program Code", "Program Name"
+            }
+        ));
+        jScrollPane2.setViewportView(programTable);
+
+        programListPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 530, 140));
+
+        idLabel16.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        idLabel16.setForeground(new java.awt.Color(215, 243, 220));
+        idLabel16.setText("PROGRAM CODE");
+        programListPanel.add(idLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 130, 30));
+
+        programCodeField9.setBackground(new java.awt.Color(32, 79, 57));
+        programCodeField9.setForeground(new java.awt.Color(215, 243, 220));
+        programCodeField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        programCodeField9.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
+        programCodeField9.setFocusable(false);
+        programListPanel.add(programCodeField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 110, 30));
+
+        idLabel19.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        idLabel19.setForeground(new java.awt.Color(215, 243, 220));
+        idLabel19.setText("NAME");
+        programListPanel.add(idLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 60, 30));
+
+        programCodeField1.setBackground(new java.awt.Color(32, 79, 57));
+        programCodeField1.setForeground(new java.awt.Color(215, 243, 220));
+        programCodeField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        programCodeField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
+        programCodeField1.setFocusable(false);
+        programListPanel.add(programCodeField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, 180, 30));
+
+        idLabel15.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        idLabel15.setForeground(new java.awt.Color(215, 243, 220));
+        idLabel15.setText("COLLEGE CODE");
+        programListPanel.add(idLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 120, 30));
+
+        programCodeField6.setBackground(new java.awt.Color(32, 79, 57));
+        programCodeField6.setForeground(new java.awt.Color(215, 243, 220));
+        programCodeField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        programCodeField6.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
+        programCodeField6.setFocusable(false);
+        programListPanel.add(programCodeField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 120, 30));
+
+        jButton2.setText("CANCEL");
+        programListPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, -1, 20));
+
+        jButton1.setText("EDIT");
+        programListPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, -1, 20));
+
+        jLabel17.setFont(new java.awt.Font("DejaVu Serif", 1, 14)); // NOI18N
+        jLabel17.setText("PROGRAM LIST");
+        programListPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        MainMenu.add(programListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 810, 160));
+
+        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 840));
 
         menuBar.setBackground(new java.awt.Color(7, 27, 20));
         menuBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -714,6 +877,16 @@ public class MainWindow extends javax.swing.JFrame {
        
        AddCollegeDialog.setVisible(false);
        
+       
+       //this code is added when you click Add New in the student dialog
+       //-----------------------------------
+       //load to studentdialog
+       loadCollegeCom();
+       //------------------------------------
+       
+       
+       
+       
        //clear the add college jframe
        codeFieldC.setText(null);
        nameFieldC.setText(null);
@@ -737,6 +910,12 @@ public class MainWindow extends javax.swing.JFrame {
         
         AddProgramDialog.setVisible(false);
         
+        
+        //this code is for the programCode in the AddStudentDialog
+        //--------------------------
+        loadProgramCom();
+        //--------------------
+        
         //clear
         codeFieldP.setText(null);
         nameFieldP.setText(null);
@@ -759,8 +938,13 @@ public class MainWindow extends javax.swing.JFrame {
       
         if(evt.getStateChange() == ItemEvent.SELECTED){
         
+            
+            if("Add New".equals((String) comboBoxCCStudent.getSelectedItem())) {
+                AddCollegeDialog.setVisible(true);  
+            }
+            
             comboBoxP.removeAllItems();
-        
+            comboBoxP.addItem("");
             for(int i = 0; i < Main.program.length; i++){
             
                 if(Main.END.equals(Main.program[i].getProgramCode())){
@@ -772,14 +956,103 @@ public class MainWindow extends javax.swing.JFrame {
                 }       
             
             }
-           
+            comboBoxP.addItem("Add New");
        }
         
     }//GEN-LAST:event_comboBoxCCStudentItemStateChanged
 
     private void confirmButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseClicked
+
+        boolean checkpoint = true;
         
+        //unique id check
+        if(idFieldNS.getText().length() == 9){
+            
+                for(int i = 0; i < Main.student.length; i++){
+                    if(Main.END.equals(Main.student[i].getIdNum())){
+                        break;
+                    }
+            
+                    if(idFieldNS.getText().equals(Main.student[i].getIdNum())){
+                    checkpoint = false;
+                
+                    //notify that the id is not unique
+                }
+            }
+        } else {
+            //notify that it should be YYYY-NNNN
+            checkpoint = false;
+        }
+        
+
+       
+        //first name check
+        String firstname = firstNameField.getText();
+        
+        if(firstname.length() <= 2){
+            checkpoint = false;
+            //notify that the first name should be greater than 2
+            if(!firstname.matches("[a-zA-Z ]")){
+                checkpoint = false;
+            //notify that the firstname characters should not contain invalid chars and or should be greater than 2
+            }
+            
+        }
+        
+    
+        //lastname check
+        String lastname = lastNameField.getText();
+        if(lastname.length() <= 2){
+            checkpoint = false;
+            //notify that the lastname should be greater that 2
+            if(!lastname.matches("[a-zA-Z]")){
+            
+                checkpoint = false;
+                //notify that the firstname characters should not contain invalid chars
+            }
+    
+        }
+        
+
+        
+        //firstname and lastname check
         for(int i = 0; i < Main.student.length; i++){
+            if(Main.END.equals(Main.student[i].getIdNum())){
+                break;
+            }
+            
+            if(firstname.equals(Main.student[i].getFirstName()) && lastname.equals(Main.student[i].getLastName())){
+                checkpoint = false;
+                
+                //notify that the name already exists
+            }
+        }
+        
+
+        
+        
+        //college code and program code check
+        String collegeCode = (String) comboBoxCCStudent.getSelectedItem();
+        String programCode = (String) comboBoxP.getSelectedItem();
+           
+        if(collegeCode.equals("")){
+            checkpoint = false;
+            //notify that there is no college code selected or add a college code
+        }
+        
+
+        
+        if(programCode.equals("")){
+            checkpoint = false;
+            //notify that there is no program code selected or add a program to the college code
+        }
+
+        
+        
+        //if all input are valid the proceed
+        if(checkpoint){
+            
+            for(int i = 0; i < Main.student.length; i++){
            
             
             if(Main.END.equals(Main.student[i].getIdNum())){
@@ -817,49 +1090,12 @@ public class MainWindow extends javax.swing.JFrame {
             }
             
         }
+        }
+    
     }//GEN-LAST:event_confirmButtonMouseClicked
 
     private void newStudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newStudentMouseReleased
-       
-        AddStudentDialog.setLocationByPlatform(true);
-        
-        //add the items for Year Level
-        comboBoxYL.removeAllItems();
-        for(int i = 0; i < Main.YearLevel.length; i++){
-            if(Main.YearLevel[i] == null){
-                break;
-            }
-            comboBoxYL.addItem(Main.YearLevel[i]);
-        }
-        //-----------------
-        
-        //add the items for College Code
-        comboBoxCCStudent.removeAllItems();
-        for(int i = 0; i < Main.college.length; i++){
-            if(Main.END.equals(Main.college[i].getCollegeCode())){
-                break;
-            }
-            comboBoxCCStudent.addItem(Main.college[i].getCollegeCode());
-        }
-        //-----------------------
-        
-        //add the items for Academic Year
-        comboBoxY.removeAllItems();
-        for(int i = 0; i < Main.Years.length; i++){
-         
-            if(Main.Years[i] == null){
-                break;
-            }
-            
-            comboBoxY.addItem(Main.Years[i]);
-        }
-        //----------------------
-        
-        //generate number
-        String num = genNum();
-        idFieldNS.setText(num);
-        
-        AddStudentDialog.setVisible(true);
+        showStudentDialog();
     }//GEN-LAST:event_newStudentMouseReleased
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -876,18 +1112,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void newProgramMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newProgramMouseReleased
         AddCollegeDialog.setLocationByPlatform(true);
-       
-        
-        //load all available college code in the comboBox
-        comboBoxCC.removeAllItems();
-        
-        for(int i = 0; i < Main.college.length; i++){
-            if(Main.END.equals(Main.college[i].getCollegeCode())){
-                break;
-            }
-             comboBoxCC.addItem(Main.college[i].getCollegeCode());
-        }
-        AddProgramDialog.setVisible(true);
+        loadCollegeToProgramDialog();
     }//GEN-LAST:event_newProgramMouseReleased
 
     private void neweCollegeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_neweCollegeMouseReleased
@@ -954,7 +1179,7 @@ public class MainWindow extends javax.swing.JFrame {
         comboBoxY.removeAllItems();
         for(int i = 0; i < Main.YearLevel.length; i++){
          
-            if(Main.Years[i] == null){
+            if(Main.YearLevel[i] == null){
                 break;
             }
             
@@ -1138,7 +1363,109 @@ public class MainWindow extends javax.swing.JFrame {
         loadStudentData();
     }//GEN-LAST:event_jLabel16MouseClicked
 
+    private void comboBoxPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxPItemStateChanged
+       //this is the program comboBox in the AddStudentDialog
+        if(evt.getStateChange() == ItemEvent.SELECTED){
+        
+            if("Add New".equals((String) comboBoxP.getSelectedItem())){
+                AddProgramDialog.setVisible(false);
+
+                loadCollegeToProgramDialog();
+            }
+            
+           
+       }
+       
+    }//GEN-LAST:event_comboBoxPItemStateChanged
+
     
+    public static void showStudentDialog(){
+        AddStudentDialog.setLocationByPlatform(true);
+        
+        //add the items for Year Level
+        comboBoxYL.removeAllItems();
+        comboBoxYL.addItem("");
+        for(int i = 0; i < Main.YearLevel.length; i++){
+            if(Main.YearLevel[i] == null){
+                break;
+            }
+            comboBoxYL.addItem(Main.YearLevel[i]);
+        }
+        //-----------------
+        
+        //add the items for College Code
+        loadCollegeCom();
+        
+        //add the items for Academic Year
+        comboBoxY.removeAllItems();
+        for(int i = 0; i < Main.Years.length; i++){
+         
+            if(Main.Years[i] == null){
+                break;
+            }
+            
+            comboBoxY.addItem(Main.Years[i]);
+        }
+        //----------------------
+        
+        //generate number
+        String num = genNum();
+        idFieldNS.setText(num);
+        
+        AddStudentDialog.setVisible(true);
+    }
+    
+    
+    
+    public static void loadCollegeToProgramDialog(){
+        //load all available college code in the comboBox
+        comboBoxCC.removeAllItems();
+        
+        for(int i = 0; i < Main.college.length; i++){
+            if(Main.END.equals(Main.college[i].getCollegeCode())){
+                break;
+            }
+             comboBoxCC.addItem(Main.college[i].getCollegeCode());
+        }
+        AddProgramDialog.setVisible(true);
+    }
+    
+    public static void loadProgramCom(){
+        
+            comboBoxP.removeAllItems();
+            comboBoxP.addItem("");
+            for(int i = 0; i < Main.program.length; i++){
+            
+                if(Main.END.equals(Main.program[i].getProgramCode())){
+                    break;
+                }
+            
+                if(comboBoxCCStudent.getSelectedItem().equals(Main.program[i].getCollegeCode())){
+                    comboBoxP.addItem(Main.program[i].getProgramCode());
+                }       
+            
+            }
+            comboBoxP.addItem("Add New");
+            
+            }
+    
+    public static void loadCollegeCom(){
+         
+        //add the items for College Code
+        comboBoxCCStudent.removeAllItems();
+        comboBoxCCStudent.addItem("");
+        for(int i = 0; i < Main.college.length; i++){
+            if(Main.END.equals(Main.college[i].getCollegeCode())){
+                break;
+            }
+            comboBoxCCStudent.addItem(Main.college[i].getCollegeCode());
+        }
+        comboBoxCCStudent.addItem("Add New");
+        
+        
+        AddCollegeDialog.setVisible(false);
+                
+    }
     
 //-------------------------------------------------------------------------------------------
    public static void clearFields(){
@@ -1223,7 +1550,7 @@ public class MainWindow extends javax.swing.JFrame {
         studentTable.getColumnModel().getColumn(5).setCellRenderer(centerRenderer);
         
         //Color
-        Color tableHeaderBg = new Color(9, 36, 27);
+        Color tableHeaderBg = new Color(7, 27, 20);
         Color tableHeaderFg = new Color(215,240,220);
         studentTable.getTableHeader().setBackground(tableHeaderBg);
 
@@ -1259,8 +1586,8 @@ public class MainWindow extends javax.swing.JFrame {
             studentData[i][2] = Main.student[i].getLastName();
             studentData[i][3] = Main.student[i].getYearLevel();
             studentData[i][4] = Main.student[i].getGender();
-            studentData[i][5] = Main.student[i].getCollegeCode();
-            studentData[i][6] = Main.student[i].getProgramCode();
+            studentData[i][5] = Main.student[i].getProgramCode();
+            studentData[i][6] = Main.student[i].getCollegeCode();
             
         
         }
@@ -1293,8 +1620,8 @@ public class MainWindow extends javax.swing.JFrame {
                 studentData[dataIndex][2] = Main.student[i].getLastName();
                 studentData[dataIndex][3] = Main.student[i].getYearLevel();
                 studentData[dataIndex][4] = Main.student[i].getGender();
-                studentData[dataIndex][5] = Main.student[i].getCollegeCode();
-                studentData[dataIndex][6] = Main.student[i].getProgramCode();
+                studentData[dataIndex][5] = Main.student[i].getProgramCode();
+                studentData[dataIndex][6] = Main.student[i].getCollegeCode();
                 dataIndex++;
             }
         }
@@ -1582,6 +1909,7 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField codeFieldP;
     public static javax.swing.JTextField collegeCodeField;
     public static javax.swing.JMenuItem collegeList;
+    public static javax.swing.JPanel collegeListPanel;
     public static javax.swing.JTable collegeTable;
     public static javax.swing.JComboBox<String> comboBoxCC;
     public static javax.swing.JComboBox<String> comboBoxCCStudent;
@@ -1611,6 +1939,11 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JLabel idLabel11;
     public static javax.swing.JLabel idLabel12;
     public static javax.swing.JLabel idLabel13;
+    public static javax.swing.JLabel idLabel15;
+    public static javax.swing.JLabel idLabel16;
+    public static javax.swing.JLabel idLabel17;
+    public static javax.swing.JLabel idLabel18;
+    public static javax.swing.JLabel idLabel19;
     public static javax.swing.JLabel idLabel2;
     public static javax.swing.JLabel idLabel3;
     public static javax.swing.JLabel idLabel4;
@@ -1620,13 +1953,20 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JLabel idLabel8;
     public static javax.swing.JLabel idLabel9;
     public static javax.swing.JTextField idNumberField;
+    public static javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton2;
+    public static javax.swing.JButton jButton3;
+    public static javax.swing.JButton jButton4;
     public static javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel jLabel10;
     public static javax.swing.JLabel jLabel11;
     public static javax.swing.JLabel jLabel12;
     public static javax.swing.JLabel jLabel13;
     public static javax.swing.JLabel jLabel14;
+    public static javax.swing.JLabel jLabel15;
     public static javax.swing.JLabel jLabel16;
+    public static javax.swing.JLabel jLabel17;
+    public static javax.swing.JLabel jLabel18;
     public static javax.swing.JLabel jLabel2;
     public static javax.swing.JLabel jLabel3;
     public static javax.swing.JLabel jLabel4;
@@ -1635,6 +1975,7 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel7;
     public static javax.swing.JLabel jLabel8;
     public static javax.swing.JLabel jLabel9;
+    public static javax.swing.JMenuItem jMenuItem1;
     public static javax.swing.JPanel jPanel1;
     public static javax.swing.JPanel jPanel3;
     public static javax.swing.JPanel jPanel4;
@@ -1642,6 +1983,7 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JScrollPane jScrollPane4;
+    public static javax.swing.JSeparator jSeparator3;
     public static javax.swing.JSpinner jSpinner1;
     public static javax.swing.JTextField lastNameField;
     public static javax.swing.JTextField lastNameLabel;
@@ -1655,10 +1997,16 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JMenuItem newStudent;
     public static javax.swing.JMenuItem neweCollege;
     public static javax.swing.JTextField programCodeField;
+    public static javax.swing.JTextField programCodeField1;
     public static javax.swing.JTextField programCodeField2;
     public static javax.swing.JTextField programCodeField3;
     public static javax.swing.JTextField programCodeField4;
     public static javax.swing.JTextField programCodeField5;
+    public static javax.swing.JTextField programCodeField6;
+    public static javax.swing.JTextField programCodeField7;
+    public static javax.swing.JTextField programCodeField8;
+    public static javax.swing.JTextField programCodeField9;
+    public static javax.swing.JPanel programListPanel;
     public static javax.swing.JTable programTable;
     public static javax.swing.JMenu reportMenu;
     public static javax.swing.JButton saveButton;
