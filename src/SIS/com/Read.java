@@ -36,7 +36,7 @@ public class Read {
                     break;
                 }
                 
-                collegeDataFormat = data.split("/");
+                collegeDataFormat = data.split(",");
     
                 Main.college[i].setCollegeCode(collegeDataFormat[0]);
                 Main.college[i].setCollegeName(collegeDataFormat[1]);
@@ -77,7 +77,7 @@ public class Read {
                     break;
                 }
                 
-                programDataFormat = data.split("/");
+                programDataFormat = data.split(",");
     
                 Main.program[i].setProgramCode(programDataFormat[0]);
                 Main.program[i].setProgramName(programDataFormat[1]);
@@ -119,15 +119,15 @@ public class Read {
                     break;
                 }
                 
-                studentDataFormat = data.split("/");
+                studentDataFormat = data.split(",");
     
                 Main.student[i].setIdNum(studentDataFormat[0]);
                 Main.student[i].setFirstName(studentDataFormat[1]);
                 Main.student[i].setLastName(studentDataFormat[2]);
                 Main.student[i].setYearLevel(studentDataFormat[3]);
                 Main.student[i].setGender(studentDataFormat[4]);
-                Main.student[i].setCollegeCode(studentDataFormat[5]);
-                Main.student[i].setProgramCode(studentDataFormat[6]);
+                Main.student[i].setProgramCode(studentDataFormat[5]);
+                Main.student[i].setCollegeCode(studentDataFormat[6]);
                
                 
                 

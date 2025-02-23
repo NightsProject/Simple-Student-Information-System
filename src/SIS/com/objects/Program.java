@@ -39,6 +39,6 @@ public class Program extends College{
     }
     
     public String programData(){
-        return programCode + "/" + programName + "/" + collegeCode;
+        return programCode + "," + programName + "," + collegeCode;
     }
 }
