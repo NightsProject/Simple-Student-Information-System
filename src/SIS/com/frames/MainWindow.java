@@ -33,6 +33,8 @@ public class MainWindow extends javax.swing.JFrame {
         codeFieldC = new javax.swing.JTextField();
         cancelButtonAddC = new javax.swing.JButton();
         addButtonC = new javax.swing.JButton();
+        collegeCodeCheckC = new javax.swing.JLabel();
+        collegeNameCheck = new javax.swing.JLabel();
         AddProgramDialog = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         nameFieldP = new javax.swing.JTextField();
@@ -42,6 +44,9 @@ public class MainWindow extends javax.swing.JFrame {
         addButtonP = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         comboBoxCC = new javax.swing.JComboBox<>();
+        collegeCodeCheck = new javax.swing.JLabel();
+        programCodeCheck = new javax.swing.JLabel();
+        programNameCheck = new javax.swing.JLabel();
         AddStudentDialog = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         idLabel = new javax.swing.JLabel();
@@ -54,8 +59,6 @@ public class MainWindow extends javax.swing.JFrame {
         comboBoxP = new javax.swing.JComboBox<>();
         firstNameField = new javax.swing.JTextField();
         lastNameField = new javax.swing.JTextField();
-        male = new javax.swing.JRadioButton();
-        female = new javax.swing.JRadioButton();
         comboBoxCCStudent = new javax.swing.JComboBox<>();
         cancelButton = new javax.swing.JButton();
         idFieldNS = new javax.swing.JTextField();
@@ -63,10 +66,17 @@ public class MainWindow extends javax.swing.JFrame {
         comboBoxYL = new javax.swing.JComboBox<>();
         comboBoxY = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        firstNameField1 = new javax.swing.JTextField();
-        lastNameField1 = new javax.swing.JTextField();
-        male1 = new javax.swing.JRadioButton();
-        female1 = new javax.swing.JRadioButton();
+        male = new javax.swing.JRadioButton();
+        female = new javax.swing.JRadioButton();
+        idCheck = new javax.swing.JLabel();
+        firstnameCheck = new javax.swing.JLabel();
+        yearLevelCheck = new javax.swing.JLabel();
+        lastnameCheck = new javax.swing.JLabel();
+        collegeCheck = new javax.swing.JLabel();
+        programCheck = new javax.swing.JLabel();
+        genderCheck = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         genderGroup = new javax.swing.ButtonGroup();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         ViewCollegeListDialog = new javax.swing.JDialog();
@@ -110,6 +120,9 @@ public class MainWindow extends javax.swing.JFrame {
         delete = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         comboBoxSP = new javax.swing.JComboBox<>();
+        idColor = new javax.swing.JLabel();
+        firstnameColor = new javax.swing.JLabel();
+        lastnameColor = new javax.swing.JLabel();
         searchField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         comboBoxSearch = new javax.swing.JComboBox<>();
@@ -132,6 +145,8 @@ public class MainWindow extends javax.swing.JFrame {
         deleteCollege = new javax.swing.JButton();
         cancelCollege = new javax.swing.JButton();
         saveCollege = new javax.swing.JButton();
+        idColor1 = new javax.swing.JLabel();
+        idColor14 = new javax.swing.JLabel();
         programListPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         programTable = new javax.swing.JTable();
@@ -152,27 +167,29 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         comboBoxSearchProgram = new javax.swing.JComboBox<>();
         refreshProgram = new javax.swing.JButton();
+        programColor = new javax.swing.JLabel();
+        programNameColor = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         SSIS = new javax.swing.JMenu();
-        newMenu = new javax.swing.JMenu();
         newStudent = new javax.swing.JMenuItem();
         newProgram = new javax.swing.JMenuItem();
         neweCollege = new javax.swing.JMenuItem();
-        about = new javax.swing.JMenu();
 
         AddCollegeDialog.setTitle("New College");
-        AddCollegeDialog.setMinimumSize(new java.awt.Dimension(266, 160));
+        AddCollegeDialog.setMinimumSize(new java.awt.Dimension(306, 297));
         AddCollegeDialog.setType(java.awt.Window.Type.UTILITY);
         AddCollegeDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("College Code");
-        AddCollegeDialog.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
-        AddCollegeDialog.getContentPane().add(nameFieldC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 100, 30));
+        AddCollegeDialog.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, 30));
+        AddCollegeDialog.getContentPane().add(nameFieldC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 240, 50));
 
         jLabel2.setText("College Name");
-        AddCollegeDialog.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 30));
-        AddCollegeDialog.getContentPane().add(codeFieldC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 100, 30));
+        AddCollegeDialog.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 30));
+        AddCollegeDialog.getContentPane().add(codeFieldC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 240, 50));
 
         cancelButtonAddC.setText("CANCEL");
         cancelButtonAddC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -180,7 +197,7 @@ public class MainWindow extends javax.swing.JFrame {
                 cancelButtonAddCMouseClicked(evt);
             }
         });
-        AddCollegeDialog.getContentPane().add(cancelButtonAddC, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        AddCollegeDialog.getContentPane().add(cancelButtonAddC, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
         addButtonC.setText("ADD");
         addButtonC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -188,20 +205,22 @@ public class MainWindow extends javax.swing.JFrame {
                 addButtonCMouseClicked(evt);
             }
         });
-        AddCollegeDialog.getContentPane().add(addButtonC, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 80, -1));
+        AddCollegeDialog.getContentPane().add(addButtonC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 80, -1));
+        AddCollegeDialog.getContentPane().add(collegeCodeCheckC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 240, 20));
+        AddCollegeDialog.getContentPane().add(collegeNameCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 240, 20));
 
         AddProgramDialog.setTitle("New Program");
-        AddProgramDialog.setMinimumSize(new java.awt.Dimension(286, 201));
+        AddProgramDialog.setMinimumSize(new java.awt.Dimension(336, 406));
         AddProgramDialog.setModal(true);
         AddProgramDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setText("Program Code");
-        AddProgramDialog.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
-        AddProgramDialog.getContentPane().add(nameFieldP, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 100, 30));
+        AddProgramDialog.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, 20));
+        AddProgramDialog.getContentPane().add(nameFieldP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 250, 50));
 
         jLabel4.setText("Program Name");
-        AddProgramDialog.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 30));
-        AddProgramDialog.getContentPane().add(codeFieldP, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 100, 30));
+        AddProgramDialog.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, 20));
+        AddProgramDialog.getContentPane().add(codeFieldP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 250, 50));
 
         cancelButtonAddP.setText("CANCEL");
         cancelButtonAddP.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -209,7 +228,7 @@ public class MainWindow extends javax.swing.JFrame {
                 cancelButtonAddPMouseClicked(evt);
             }
         });
-        AddProgramDialog.getContentPane().add(cancelButtonAddP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        AddProgramDialog.getContentPane().add(cancelButtonAddP, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
         addButtonP.setText("ADD");
         addButtonP.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -217,16 +236,19 @@ public class MainWindow extends javax.swing.JFrame {
                 addButtonPMouseClicked(evt);
             }
         });
-        AddProgramDialog.getContentPane().add(addButtonP, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 80, -1));
+        AddProgramDialog.getContentPane().add(addButtonP, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 80, -1));
 
         jLabel5.setText("College Code");
-        AddProgramDialog.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        AddProgramDialog.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 20));
 
         comboBoxCC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        AddProgramDialog.getContentPane().add(comboBoxCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 103, 100, 30));
+        AddProgramDialog.getContentPane().add(comboBoxCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 250, 50));
+        AddProgramDialog.getContentPane().add(collegeCodeCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 250, 20));
+        AddProgramDialog.getContentPane().add(programCodeCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 250, 20));
+        AddProgramDialog.getContentPane().add(programNameCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 250, 20));
 
         AddStudentDialog.setBackground(new java.awt.Color(23, 58, 43));
-        AddStudentDialog.setMinimumSize(new java.awt.Dimension(465, 409));
+        AddStudentDialog.setMinimumSize(new java.awt.Dimension(551, 572));
         AddStudentDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(23, 58, 43));
@@ -235,37 +257,37 @@ public class MainWindow extends javax.swing.JFrame {
         idLabel.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         idLabel.setForeground(new java.awt.Color(0, 0, 0));
         idLabel.setText("ID NUMBER");
-        jPanel2.add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 120, 30));
+        jPanel2.add(idLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 240, 60));
 
         idLabel1.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         idLabel1.setForeground(new java.awt.Color(0, 0, 0));
         idLabel1.setText("COLLEGE CODE");
-        jPanel2.add(idLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 120, 20));
+        jPanel2.add(idLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 240, 40));
 
         idLabel2.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         idLabel2.setForeground(new java.awt.Color(0, 0, 0));
         idLabel2.setText("FIRST NAME");
-        jPanel2.add(idLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 120, 10));
+        jPanel2.add(idLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 240, 40));
 
         idLabel3.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         idLabel3.setForeground(new java.awt.Color(0, 0, 0));
         idLabel3.setText("LAST NAME");
-        jPanel2.add(idLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 120, 20));
+        jPanel2.add(idLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 240, 40));
 
         idLabel4.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         idLabel4.setForeground(new java.awt.Color(0, 0, 0));
         idLabel4.setText("YEAR LEVEL");
-        jPanel2.add(idLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 120, 10));
+        jPanel2.add(idLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 240, 40));
 
         idLabel5.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         idLabel5.setForeground(new java.awt.Color(0, 0, 0));
         idLabel5.setText("GENDER");
-        jPanel2.add(idLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 110, 20));
+        jPanel2.add(idLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 230, 50));
 
         idLabel6.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         idLabel6.setForeground(new java.awt.Color(0, 0, 0));
         idLabel6.setText("PROGRAM CODE");
-        jPanel2.add(idLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 140, 20));
+        jPanel2.add(idLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 260, 40));
 
         comboBoxP.setBackground(new java.awt.Color(32, 79, 57));
         comboBoxP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
@@ -280,23 +302,15 @@ public class MainWindow extends javax.swing.JFrame {
                 comboBoxPFocusLost(evt);
             }
         });
-        jPanel2.add(comboBoxP, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 150, 30));
+        jPanel2.add(comboBoxP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 240, 50));
 
         firstNameField.setBackground(new java.awt.Color(32, 79, 57));
         firstNameField.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
-        jPanel2.add(firstNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 150, 30));
+        jPanel2.add(firstNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 240, 50));
 
         lastNameField.setBackground(new java.awt.Color(32, 79, 57));
         lastNameField.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
-        jPanel2.add(lastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 150, 30));
-
-        genderGroup.add(male);
-        male.setText("Male");
-        jPanel2.add(male, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, 30));
-
-        genderGroup.add(female);
-        female.setText("female");
-        jPanel2.add(female, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, 30));
+        jPanel2.add(lastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 240, 50));
 
         comboBoxCCStudent.setBackground(new java.awt.Color(32, 79, 57));
         comboBoxCCStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
@@ -306,7 +320,7 @@ public class MainWindow extends javax.swing.JFrame {
                 comboBoxCCStudentItemStateChanged(evt);
             }
         });
-        jPanel2.add(comboBoxCCStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 150, 30));
+        jPanel2.add(comboBoxCCStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 240, 50));
 
         cancelButton.setText("CANCEL");
         cancelButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -314,11 +328,11 @@ public class MainWindow extends javax.swing.JFrame {
                 cancelButtonMouseClicked(evt);
             }
         });
-        jPanel2.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 90, -1));
+        jPanel2.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 110, 30));
 
         idFieldNS.setBackground(new java.awt.Color(32, 79, 57));
         idFieldNS.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
-        jPanel2.add(idFieldNS, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 150, 30));
+        jPanel2.add(idFieldNS, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 240, 50));
 
         confirmButton.setText("CONFIRM");
         confirmButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -326,12 +340,12 @@ public class MainWindow extends javax.swing.JFrame {
                 confirmButtonMouseClicked(evt);
             }
         });
-        jPanel2.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 90, -1));
+        jPanel2.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, 110, 30));
 
         comboBoxYL.setBackground(new java.awt.Color(32, 79, 57));
         comboBoxYL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
         comboBoxYL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
-        jPanel2.add(comboBoxYL, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 150, 30));
+        jPanel2.add(comboBoxYL, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 240, 50));
 
         comboBoxY.setBackground(new java.awt.Color(32, 79, 57));
         comboBoxY.setEditable(true);
@@ -342,25 +356,38 @@ public class MainWindow extends javax.swing.JFrame {
                 comboBoxYItemStateChanged(evt);
             }
         });
-        jPanel2.add(comboBoxY, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 150, 30));
+        jPanel2.add(comboBoxY, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 240, 50));
 
         jLabel7.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("ACADEMIC YEAR");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, 30));
-        jPanel2.add(firstNameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 150, 30));
-        jPanel2.add(lastNameField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 150, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 240, 60));
 
-        genderGroup.add(male1);
-        male1.setSelected(true);
-        male1.setText("Male");
-        jPanel2.add(male1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, 30));
+        genderGroup.add(male);
+        male.setSelected(true);
+        male.setText("Male");
+        jPanel2.add(male, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 70, 60));
 
-        genderGroup.add(female1);
-        female1.setText("female");
-        jPanel2.add(female1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, 30));
+        genderGroup.add(female);
+        female.setText("female");
+        jPanel2.add(female, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 70, 60));
+        jPanel2.add(idCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 240, 20));
+        jPanel2.add(firstnameCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 240, 20));
+        jPanel2.add(yearLevelCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 240, 20));
+        jPanel2.add(lastnameCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 240, 20));
+        jPanel2.add(collegeCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 240, 20));
+        jPanel2.add(programCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 240, 20));
+        jPanel2.add(genderCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 240, 20));
 
-        AddStudentDialog.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 400));
+        genderGroup.add(jRadioButton1);
+        jRadioButton1.setText("Prefer not to say");
+        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
+
+        genderGroup.add(jRadioButton2);
+        jRadioButton2.setText("Others");
+        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
+
+        AddStudentDialog.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 570));
 
         ViewCollegeListDialog.setMinimumSize(new java.awt.Dimension(1051, 478));
         ViewCollegeListDialog.setResizable(false);
@@ -420,7 +447,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Student Information System");
-        setMinimumSize(new java.awt.Dimension(1010, 407));
+        setMinimumSize(new java.awt.Dimension(1151, 891));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -431,6 +458,9 @@ public class MainWindow extends javax.swing.JFrame {
 
         MainMenu.setBackground(new java.awt.Color(20, 51, 37));
         MainMenu.setForeground(new java.awt.Color(153, 153, 153));
+        MainMenu.setMaximumSize(new java.awt.Dimension(1151, 891));
+        MainMenu.setMinimumSize(new java.awt.Dimension(1151, 891));
+        MainMenu.setPreferredSize(new java.awt.Dimension(1151, 891));
         MainMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setBackground(new java.awt.Color(20, 51, 37));
@@ -574,7 +604,7 @@ public class MainWindow extends javax.swing.JFrame {
                 editButtonMouseClicked(evt);
             }
         });
-        jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, 20));
+        jPanel1.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, 20));
 
         saveButton.setText("SAVE");
         saveButton.setEnabled(false);
@@ -585,7 +615,7 @@ public class MainWindow extends javax.swing.JFrame {
                 saveButtonMouseClicked(evt);
             }
         });
-        jPanel1.add(saveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, 20));
+        jPanel1.add(saveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, 20));
 
         comboBoxYearL.setBackground(new java.awt.Color(32, 79, 57));
         comboBoxYearL.setEditable(true);
@@ -606,6 +636,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         genderG.add(maleG);
         maleG.setForeground(new java.awt.Color(215, 243, 220));
+        maleG.setSelected(true);
         maleG.setText("Male");
         jPanel1.add(maleG, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 70, 30));
 
@@ -618,7 +649,7 @@ public class MainWindow extends javax.swing.JFrame {
                 deleteMouseClicked(evt);
             }
         });
-        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 80, 20));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 80, 20));
 
         cancel.setText("CANCEL");
         cancel.setEnabled(false);
@@ -629,14 +660,27 @@ public class MainWindow extends javax.swing.JFrame {
                 cancelMouseClicked(evt);
             }
         });
-        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, 20));
+        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, 20));
 
         comboBoxSP.setBackground(new java.awt.Color(32, 79, 57));
         comboBoxSP.setForeground(new java.awt.Color(215, 243, 220));
         comboBoxSP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(comboBoxSP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 90, 30));
 
-        MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 150, 270, 300));
+        idColor.setBackground(new java.awt.Color(255, 0, 0));
+        idColor.setToolTipText("programcode");
+        idColor.setOpaque(true);
+        jPanel1.add(idColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 10, 10));
+
+        firstnameColor.setBackground(new java.awt.Color(255, 0, 0));
+        firstnameColor.setOpaque(true);
+        jPanel1.add(firstnameColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 10, 10));
+
+        lastnameColor.setBackground(new java.awt.Color(255, 0, 0));
+        lastnameColor.setOpaque(true);
+        jPanel1.add(lastnameColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 10, 10));
+
+        MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 140, 290, -1));
 
         searchField.setForeground(new java.awt.Color(0, 0, 0));
         searchField.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.darkGray, null));
@@ -792,7 +836,15 @@ public class MainWindow extends javax.swing.JFrame {
         });
         collegeListPanel.add(saveCollege, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 120, -1, 20));
 
-        MainMenu.add(collegeListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 1120, 180));
+        idColor1.setBackground(new java.awt.Color(255, 0, 0));
+        idColor1.setOpaque(true);
+        collegeListPanel.add(idColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 10, 10));
+
+        idColor14.setBackground(new java.awt.Color(255, 0, 0));
+        idColor14.setOpaque(true);
+        collegeListPanel.add(idColor14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 40, 10, 10));
+
+        MainMenu.add(collegeListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 1150, 180));
 
         programListPanel.setBackground(new java.awt.Color(20, 51, 37));
         programListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -936,7 +988,15 @@ public class MainWindow extends javax.swing.JFrame {
         });
         programListPanel.add(refreshProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 110, 20));
 
-        MainMenu.add(programListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 1130, 190));
+        programColor.setBackground(new java.awt.Color(255, 0, 0));
+        programColor.setOpaque(true);
+        programListPanel.add(programColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 40, 10, 10));
+
+        programNameColor.setBackground(new java.awt.Color(255, 0, 0));
+        programNameColor.setOpaque(true);
+        programListPanel.add(programNameColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 10, 10));
+
+        MainMenu.add(programListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 1160, 190));
 
         jButton1.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
@@ -949,7 +1009,14 @@ public class MainWindow extends javax.swing.JFrame {
         });
         MainMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, -1, 20));
 
-        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1830, 860));
+        jLabel14.setFont(new java.awt.Font("DejaVu Serif", 2, 36)); // NOI18N
+        jLabel14.setText("SSimple");
+        MainMenu.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
+
+        jLabel17.setText("v 1.0.1");
+        MainMenu.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, -1, -1));
+
+        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 860));
 
         menuBar.setBackground(new java.awt.Color(7, 27, 20));
         menuBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -959,10 +1026,8 @@ public class MainWindow extends javax.swing.JFrame {
         menuBar.setPreferredSize(new java.awt.Dimension(102, 50));
 
         SSIS.setBackground(new java.awt.Color(7, 27, 20));
-        SSIS.setText("SSimple");
-        SSIS.setFont(new java.awt.Font("DejaVu Serif", 0, 24)); // NOI18N
-
-        newMenu.setText("New");
+        SSIS.setText("NEW");
+        SSIS.setFont(new java.awt.Font("DejaVu Serif", 0, 14)); // NOI18N
 
         newStudent.setText("Student");
         newStudent.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -970,7 +1035,7 @@ public class MainWindow extends javax.swing.JFrame {
                 newStudentMouseReleased(evt);
             }
         });
-        newMenu.add(newStudent);
+        SSIS.add(newStudent);
 
         newProgram.setText("Program");
         newProgram.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -978,7 +1043,7 @@ public class MainWindow extends javax.swing.JFrame {
                 newProgramMouseReleased(evt);
             }
         });
-        newMenu.add(newProgram);
+        SSIS.add(newProgram);
 
         neweCollege.setText("College");
         neweCollege.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -986,14 +1051,9 @@ public class MainWindow extends javax.swing.JFrame {
                 neweCollegeMouseReleased(evt);
             }
         });
-        newMenu.add(neweCollege);
-
-        SSIS.add(newMenu);
+        SSIS.add(neweCollege);
 
         menuBar.add(SSIS);
-
-        about.setText("New");
-        menuBar.add(about);
 
         setJMenuBar(menuBar);
 
@@ -1010,8 +1070,64 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonAddPMouseClicked
 
     private void addButtonCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonCMouseClicked
+
+        //checkpoints
         
-        for(int i = 0; i < Main.collegeData.size(); i++){
+        boolean checkpoint = true;
+
+        
+        collegeCodeCheckC.setText("");
+        collegeNameCheck.setText("");
+        
+          //check college Code if blank
+        if(codeFieldC.getText().isBlank()){
+            checkpoint = false;
+             collegeCodeCheckC.setText("* It's Empty");
+        } else {
+            
+            String collegeCode = codeFieldC.getText().toLowerCase();
+            
+            if(!collegeCode.matches("[a-zA-Z ]+")){
+                checkpoint = false;
+                collegeCodeCheckC.setText("* Alphabetical Letters Only");
+          
+            } else {
+                //check if programCode is unique
+                for(int i = 0; i < Main.collegeData.size(); i++){
+        
+                if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
+                    break;
+                }
+                
+                if(collegeCode.equals(Main.collegeData.get(i).getCollegeCode().toLowerCase())){
+                    checkpoint = false;
+                    collegeCodeCheckC.setText("* College Code Exists");
+                }
+        
+                }
+            }
+ 
+        }
+        
+        //college name check
+        if(nameFieldC.getText().isBlank()){
+            checkpoint = false;
+              collegeNameCheck.setText("* It's Empty");
+        } else {
+            
+            String collegeName = nameFieldC.getText();
+            if(!collegeName.matches("[a-zA-Z ]+")){
+                checkpoint = false;
+               collegeNameCheck.setText("* Alphabetical Letters Only");
+            }
+            
+        }
+        
+        
+        
+        if(checkpoint){
+       
+            for(int i = 0; i < Main.collegeData.size(); i++){
             
             //check if end then add the college to the object array
             if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
@@ -1040,6 +1156,9 @@ public class MainWindow extends javax.swing.JFrame {
        codeFieldC.setText(null);
        nameFieldC.setText(null);
        AddCollegeDialog.dispose();
+        }
+    
+       
       
     }//GEN-LAST:event_addButtonCMouseClicked
 
@@ -1048,56 +1167,65 @@ public class MainWindow extends javax.swing.JFrame {
         
         boolean checkpoint = true;
         
-
-        String collegeCode = codeFieldC.getText();
-        String programName = nameFieldP.getText();
+        programCodeCheck.setText("");
+        programNameCheck.setText("");
+        collegeCodeCheck.setText("");
         
         //check program Code if blank
         if(codeFieldP.getText().isBlank()){
             checkpoint = false;
+             programCodeCheck.setText("* It's Empty");
         } else {
             
-            String programCode = codeFieldP.getText();
+            String programCode = codeFieldP.getText().toLowerCase();
             
-            //check if programCode is unique
-            for(int i = 0; i < Main.programData.size(); i++){
+            if(!programCode.matches("[a-zA-Z ]+")){
+                checkpoint = false;
+                programCodeCheck.setText("* Alphabetical Letters Only");
+          
+            } else {
+                //check if programCode is unique
+                for(int i = 0; i < Main.programData.size(); i++){
         
                 if(Main.END.equals(Main.programData.get(i).getProgramCode())){
                     break;
                 }
                 
-                if(programCode.equals(Main.programData.get(i).getProgramCode())){
+                if(programCode.equals(Main.programData.get(i).getProgramCode().toLowerCase())){
                     checkpoint = false;
+                    programCodeCheck.setText("* Program Code Exists");
                 }
         
+                }
             }
             
-            if(!programCode.matches("[a-zA-Z ]")){
-                checkpoint = false;
-            //notify that the program characters should not contain invalid chars and or should be greater than 2
-            }
-            
+           
             
         }
-        
-        
-        
-        
-        //check program Name
-        if(nameFieldP.getText().isEmpty()){
-            checkpoint = false;
-            //notify that the neme field should not be empty
-        }
-        
-        
-        
-        
+         
       
-
-
-
-
-
+        //check program Name
+        if(nameFieldP.getText().isBlank()){
+            checkpoint = false;
+              programNameCheck.setText("* It's Empty");
+        } else {
+            
+            String programName = nameFieldP.getText();
+            if(!programName.matches("[a-zA-Z ]+")){
+                checkpoint = false;
+               programNameCheck.setText("* Alphabetical Letters Only");
+            }
+            
+        }
+        
+        
+        String collegeCode = (String) comboBoxCC.getSelectedItem();
+        if(collegeCode.equals("")){
+            checkpoint= false;
+            collegeCodeCheck.setText("* It's Empty");
+       
+        }
+        
         if(checkpoint){
             for(int i = 0; i < Main.programData.size(); i++){
             if(Main.END.equals(Main.programData.get(i).getProgramCode())){
@@ -1173,93 +1301,132 @@ public class MainWindow extends javax.swing.JFrame {
 
         boolean checkpoint = true;
         
+        
+        idCheck.setText("");
+        firstnameCheck.setText("");
+        lastnameCheck.setText("");
+        yearLevelCheck.setText("");
+        collegeCheck.setText("");
+        programCheck.setText("");
+        
         //unique id check
-        if(idFieldNS.getText().length() == 9){
+        if(idFieldNS.getText().isBlank()){
+            checkpoint = false;
+            idCheck.setText("* The ID number is empty");
             
-                for(int i = 0; i < Main.studentData.size(); i++){
-                    if(Main.END.equals(Main.studentData.get(i).getIdNum())){
-                        break;
-                    }
+        } else {
             
-                    if(idFieldNS.getText().equals(Main.studentData.get(i).getIdNum())){
-                    checkpoint = false;
+            if(!idFieldNS.getText().matches("\\d{4}-\\d{4}")){
+                checkpoint = false;
+                idCheck.setText("* Format: YYYY-NNNN");
+             
+            } else {
                 
-                    //notify that the id is not unique
+                if(idFieldNS.getText().length() == 9){
+            
+                    for(int i = 0; i < Main.studentData.size(); i++){
+                        if(Main.END.equals(Main.studentData.get(i).getIdNum())){
+                            break;
+                        }
+            
+                        if(idFieldNS.getText().equals(Main.studentData.get(i).getIdNum())){
+                            checkpoint = false;
+                            System.out.print("nn");
+                            idCheck.setText("* ID number is taken");
+                   
+                        }
+                    }
+                
                 }
             }
-        } else {
-            //notify that it should be YYYY-NNNN
-            checkpoint = false;
+            
         }
         
+     
+       //--------------------------------------------------------------------------
 
-       
         //first name check
-        String firstname = firstNameField.getText();
-        
-        if(firstname.length() <= 2){
+        if(firstNameField.getText().isBlank()){
             checkpoint = false;
-            //notify that the first name should be greater than 2
-            if(!firstname.matches("[a-zA-Z ]")){
-                checkpoint = false;
-            //notify that the firstname characters should not contain invalid chars and or should be greater than 2
-            }
-            
+            firstnameCheck.setText("* It's Empty");
+           
+        } else {
+            String firstname = firstNameField.getText();
+            if(!firstname.matches("[a-zA-Z ]+")){
+               checkpoint = false;
+               firstnameCheck.setText("* Alphabetical letters only");
+           
+            } 
         }
+     
+       
+        //--------------------------------------------------------------------------
+  
         
-    
         //lastname check
-        String lastname = lastNameField.getText();
-        if(lastname.length() <= 2){
+        if(lastNameField.getText().isBlank()){
             checkpoint = false;
-            //notify that the lastname should be greater that 2
-            if(!lastname.matches("[a-zA-Z]")){
-            
+            lastnameCheck.setText("* It's Empty");
+        } else {
+            String lastname = lastNameField.getText();
+            if(!lastname.matches("[a-zA-Z]+")){
                 checkpoint = false;
-                //notify that the firstname characters should not contain invalid chars
+                lastnameCheck.setText("* Alphabetical letters only");
             }
-    
         }
+       
+  
+        
         
         
         
         //firstname and lastname check
-        for(int i = 0; i < Main.studentData.size(); i++){
+        if(firstNameField.getText().isBlank() && lastNameField.getText().isBlank()){
+            checkpoint = false;
+        } else {
+            
+            String firstname = firstNameField.getText().toLowerCase();
+            String lastname = lastNameField.getText().toLowerCase();
+            
+            for(int i = 0; i < Main.studentData.size(); i++){
             if(Main.END.equals(Main.studentData.get(i).getIdNum())){
                 break;
             }
             
-            if(firstname.equals(Main.studentData.get(i).getFirstName()) && lastname.equals(Main.studentData.get(i).getLastName())){
+            if(firstname.equals(Main.studentData.get(i).getFirstName().toLowerCase()) && lastname.equals(Main.studentData.get(i).getLastName().toLowerCase())){
                 checkpoint = false;
-                
-                //notify that the name already exists
+                firstnameCheck.setText("Both Firstname and Lastname exist");
+                lastnameCheck.setText("Both Firstname and Lastname exist");
             }
         }
+        }
+       
+
         
         String yearLevel = (String) comboBoxYL.getSelectedItem();
         if(yearLevel.equals("")){
             checkpoint = false;
+            yearLevelCheck.setText("It's Empty");
         }
         
-            
-            
+           
+    
+     
         //college code and program code check
         String collegeCode = (String) comboBoxCCStudent.getSelectedItem();
         String programCode = (String) comboBoxP.getSelectedItem();
-           
+     
         if(collegeCode.equals("")){
             checkpoint = false;
-            //notify that there is no college code selected or add a college code
+            collegeCheck.setText("It's Empty");
         }
-        
-
-        
+      
+     
         if(programCode.equals("")){
             checkpoint = false;
-            //notify that there is no program code selected or add a program to the college code
+            programCheck.setText("It's Empty");
         }
 
-        
         
         //if all input are valid the proceed
         if(checkpoint){
@@ -1316,6 +1483,10 @@ public class MainWindow extends javax.swing.JFrame {
         saveButton.setVisible(false);
         cancel.setVisible(false);
         
+        idColor.setVisible(false);
+        firstnameColor.setVisible(false);
+        lastnameColor.setVisible(false);
+ 
         
      
         comboBoxYearL.setVisible(false);
@@ -1325,11 +1496,11 @@ public class MainWindow extends javax.swing.JFrame {
         cancelProgram.setVisible(false);
         comboBoxCCP.setVisible(false);
         
+        programColor.setVisible(false);
+        programNameColor.setVisible(false);
         
-        //college Table Part
         
-        
-
+       
         loadStudentData();
         loadCollegeData();
         loadProgramData();
@@ -1388,7 +1559,73 @@ public class MainWindow extends javax.swing.JFrame {
     private void saveProgramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveProgramMouseClicked
 
         //waiting popup to notify if you want to proceed to edit and the students data will also be modified
-
+        
+        boolean checkpoint = true;
+        
+        programColor.setVisible(false);
+        programNameColor.setVisible(false);
+        
+        //check program Code if blank
+        if(programCodeP.getText().isBlank()){
+            checkpoint = false;
+              programColor.setVisible(true);
+              programColor.setToolTipText("It's Empty");
+        } else {
+            
+            String programCode = programCodeP.getText().toLowerCase();
+            
+            if(!programCode.matches("[a-zA-Z ]+")){
+                checkpoint = false;
+                programColor.setVisible(true);
+                programColor.setToolTipText("Alphabetical Letters Only");
+          
+            } else {
+                
+                
+                int selectedRow = programTable.getSelectedRow();
+                String pastProgramCode = programTable.getValueAt(selectedRow, 0).toString().toLowerCase();
+                
+                if(!pastProgramCode.equals(programCode)){
+                    //check if programCode is unique
+                    for(int i = 0; i < Main.programData.size(); i++){
+        
+                    if(Main.END.equals(Main.programData.get(i).getProgramCode())){
+                        break;
+                    }
+                
+                    if(programCode.equals(Main.programData.get(i).getProgramCode().toLowerCase())){
+                        checkpoint = false;
+                        programColor.setVisible(true);
+                        programColor.setToolTipText("Program Code Exists");
+                    }
+                    }
+          
+                }
+            }
+            
+           
+            
+        }
+         
+      
+        //check program Name
+        if(programCodeN.getText().isBlank()){
+            checkpoint = false;
+            programNameColor.setVisible(true);
+            programNameColor.setToolTipText("* It's Empty");
+        } else {
+            
+            String programName = programCodeN.getText();
+            if(!programName.matches("[a-zA-Z ]+")){
+               checkpoint = false;
+               programNameColor.setVisible(true);
+               programNameColor.setToolTipText("* Alphabetical Letters Only");
+            }
+            
+        }
+        
+        
+        if(checkpoint){
         saveProgram.setVisible(false);
         cancelProgram.setVisible(false);
         comboBoxCCP.setVisible(false);
@@ -1412,6 +1649,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         loadProgramData();
         loadStudentData();
+        }
+        
+        
+      
     }//GEN-LAST:event_saveProgramMouseClicked
 
     private void editProgramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editProgramMouseClicked
@@ -1432,8 +1673,6 @@ public class MainWindow extends javax.swing.JFrame {
 
             //loadthe college data
             comboBoxCCP.removeAllItems();
-            comboBoxCCP.addItem("");
-
             for(int i = 0; i < Main.collegeData.size(); i++){
                 if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
                     break;
@@ -1447,6 +1686,9 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void cancelProgramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelProgramMouseClicked
 
+        programColor.setVisible(false);
+        programNameColor.setVisible(false);
+        
         cancelProgram.setVisible(false);
         saveProgram.setVisible(false);
         comboBoxCCP.setVisible(false);
@@ -1517,6 +1759,14 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
 
+
+        
+        idColor.setVisible(false);
+        firstnameColor.setVisible(false);
+        lastnameColor.setVisible(false);
+
+        
+        
         saveButton.setEnabled(false);
         cancel.setEnabled(false);
         saveButton.setVisible(false);
@@ -1529,19 +1779,11 @@ public class MainWindow extends javax.swing.JFrame {
         studentTable.setEnabled(true);
         SSIS.setEnabled(true);
 
-        firstNameLabel.setEditable(false);
+        idNumberField.setFocusable(false);
         firstNameLabel.setFocusable(false);
-
-        lastNameLabel.setEditable(false);
         lastNameLabel.setFocusable(false);
-
-        yearLevelField.setEditable(false);
         yearLevelField.setFocusable(false);
-
-        genderField.setEditable(false);
         genderField.setFocusable(false);
-
-        programCodeField.setEditable(false);
         programCodeField.setFocusable(false);
 
         programCodeField.setVisible(true);
@@ -1553,6 +1795,10 @@ public class MainWindow extends javax.swing.JFrame {
         maleG.setVisible(false);
         femaleG.setVisible(false);
 
+        idColor.setOpaque(false);
+        
+        
+        
         getStudentTableRowData();
 
     }//GEN-LAST:event_cancelMouseClicked
@@ -1582,6 +1828,120 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
 
+        boolean checkpoint = true;
+  
+        idColor.setVisible(false);
+        firstnameColor.setVisible(false);
+        lastnameColor.setVisible(false);
+    
+        
+          //unique id check
+        if(idNumberField.getText().isBlank()){
+            checkpoint = false;
+         
+            
+        } else {
+            
+            if(!idNumberField.getText().matches("\\d{4}-\\d{4}")){
+                checkpoint = false;
+                idColor.setVisible(true);
+             
+            } else {
+   
+                if(idNumberField.getText().length() == 9){
+            
+                    int selectedRow = studentTable.getSelectedRow();
+                    String pastIdNum = (String) studentTable.getValueAt(selectedRow, 0);
+                    
+                    if(!pastIdNum.equals(idNumberField.getText())){
+                        for(int i = 0; i < Main.studentData.size(); i++){
+                        if(Main.END.equals(Main.studentData.get(i).getIdNum())){
+                            break;
+                        }
+            
+                        if(idNumberField.getText().equals(Main.studentData.get(i).getIdNum())){
+                            checkpoint = false;
+                            idColor.setVisible(true);
+                   
+                        }
+                        }   
+                    }
+                   
+                
+                }
+            }
+            
+        }
+        
+          //--------------------------------------------------------------------------
+
+        //first name check
+        if(firstNameLabel.getText().isBlank()){
+            checkpoint = false;
+            firstnameColor.setVisible(true);
+           
+        } else {
+            String firstname = firstNameLabel.getText();
+            if(!firstname.matches("[a-zA-Z ]+")){
+               checkpoint = false;
+               firstnameColor.setVisible(true);
+           
+            } 
+        }
+     
+       
+        //--------------------------------------------------------------------------
+  
+        
+        //lastname check
+        if(lastNameLabel.getText().isBlank()){
+            checkpoint = false;
+                lastnameColor.setVisible(true);
+        } else {
+            String lastname = lastNameLabel.getText();
+            if(!lastname.matches("[a-zA-Z]+")){
+                checkpoint = false;
+                lastnameColor.setVisible(true);
+            }
+        }
+       
+  
+        
+        
+        
+        
+        //firstname and lastname check
+        if(firstNameLabel.getText().isBlank() && lastNameLabel.getText().isBlank()){
+            checkpoint = false;
+        } else {
+            
+ 
+            String firstname = firstNameLabel.getText().toLowerCase();
+            String lastname = lastNameLabel.getText().toLowerCase();
+            
+            int selectedRow = studentTable.getSelectedRow();
+            String pastFirstname = (String) studentTable.getValueAt(selectedRow, 1);
+            String pastLastname = (String) studentTable.getValueAt(selectedRow, 2);
+            
+            //check if same from past and current name
+            if(!pastFirstname.equals(firstname) && !pastLastname.equals(lastname)){
+                for(int i = 0; i < Main.studentData.size(); i++){
+                    if(Main.END.equals(Main.studentData.get(i).getIdNum())){
+                        break;
+                    }
+                    //check if unique
+                    if(firstname.equals(Main.studentData.get(i).getFirstName().toLowerCase()) && lastname.equals(Main.studentData.get(i).getLastName().toLowerCase())){
+                        checkpoint = false;
+                        firstnameColor.setVisible(true);
+                        lastnameColor.setVisible(true);
+                    }
+                }
+            }
+
+        }
+       
+        
+        if(checkpoint){
         saveButton.setEnabled(false);
         cancel.setEnabled(false);
 
@@ -1594,19 +1954,11 @@ public class MainWindow extends javax.swing.JFrame {
         studentTable.setEnabled(true);
         SSIS.setEnabled(true);
 
-        firstNameLabel.setEditable(false);
+        idNumberField.setFocusable(false);
         firstNameLabel.setFocusable(false);
-
-        lastNameLabel.setEditable(false);
         lastNameLabel.setFocusable(false);
-
-        yearLevelField.setEditable(false);
         yearLevelField.setFocusable(false);
-
-        genderField.setEditable(false);
         genderField.setFocusable(false);
-
-        programCodeField.setEditable(false);
         programCodeField.setFocusable(false);
 
         programCodeField.setVisible(true);
@@ -1618,13 +1970,17 @@ public class MainWindow extends javax.swing.JFrame {
         maleG.setVisible(false);
         femaleG.setVisible(false);
 
+        
         //get the inputs in the labels and comboBox
         saveStudentEdit();
         Write.writeStudent();
 
+        Student.sortStudentArray();
         clearStudentFields();
 
         loadStudentData();
+        }
+       
     }//GEN-LAST:event_saveButtonMouseClicked
 
     private void editButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseClicked
@@ -1640,19 +1996,18 @@ public class MainWindow extends javax.swing.JFrame {
             studentTable.setEnabled(false);
             SSIS.setEnabled(false);
 
-            idNumberField.setEditable(false);
-            idNumberField.setFocusable(false);
+            
+            idNumberField.setFocusable(true);
 
-            firstNameLabel.setEditable(true);
             firstNameLabel.setFocusable(true);
 
-            lastNameLabel.setEditable(true);
+
             lastNameLabel.setFocusable(true);
 
-            yearLevelField.setEditable(true);
+
             yearLevelField.setFocusable(true);
 
-            genderField.setEditable(true);
+
             genderField.setFocusable(true);
 
             programCodeField.setVisible(false);
@@ -2392,7 +2747,6 @@ public class MainWindow extends javax.swing.JFrame {
 //-------------------------------------------------------------------------------------------
     public static void saveStudentEdit(){
     
-        //checkpoints
         
         for(int i = 0; i < Main.studentData.size(); i++){
             
@@ -2400,8 +2754,12 @@ public class MainWindow extends javax.swing.JFrame {
                 break;
             }
             
-            if(idNumberField.getText().equals(Main.studentData.get(i).getIdNum())){
+            int selectedRow = studentTable.getSelectedRow();
+            String pastIdNum = (String) studentTable.getValueAt(selectedRow, 0);
+            
+            if(pastIdNum.equals(Main.studentData.get(i).getIdNum())){
                 
+                Main.studentData.get(i).setIdNum(idNumberField.getText());
                 Main.studentData.get(i).setFirstName(firstNameLabel.getText());
                 Main.studentData.get(i).setLastName(lastNameLabel.getText());
                 Main.studentData.get(i).setYearLevel( (String) comboBoxYearL.getSelectedItem());
@@ -2597,7 +2955,6 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JPanel MainMenu;
     public static javax.swing.JMenu SSIS;
     public static javax.swing.JDialog ViewCollegeListDialog;
-    public static javax.swing.JMenu about;
     public static javax.swing.JButton addButtonC;
     public static javax.swing.JButton addButtonP;
     public static javax.swing.JButton cancel;
@@ -2608,10 +2965,14 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JButton cancelProgram;
     public static javax.swing.JTextField codeFieldC;
     public static javax.swing.JTextField codeFieldP;
+    public static javax.swing.JLabel collegeCheck;
     public static javax.swing.JTextField collegeCodeC;
+    public static javax.swing.JLabel collegeCodeCheck;
+    public static javax.swing.JLabel collegeCodeCheckC;
     public static javax.swing.JTextField collegeCodeN;
     public static javax.swing.JTextField collegeCodeP;
     public static javax.swing.JPanel collegeListPanel;
+    public static javax.swing.JLabel collegeNameCheck;
     public static javax.swing.JTable collegeTable;
     public static javax.swing.JComboBox<String> comboBoxCC;
     public static javax.swing.JComboBox<String> comboBoxCCP;
@@ -2632,15 +2993,20 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JButton editCollege;
     public static javax.swing.JButton editProgram;
     public static javax.swing.JRadioButton female;
-    public static javax.swing.JRadioButton female1;
     public static javax.swing.JRadioButton femaleG;
     public static javax.swing.JTextField firstNameField;
-    public static javax.swing.JTextField firstNameField1;
     public static javax.swing.JTextField firstNameLabel;
+    public static javax.swing.JLabel firstnameCheck;
+    public static javax.swing.JLabel firstnameColor;
+    public static javax.swing.JLabel genderCheck;
     public static javax.swing.JTextField genderField;
     public static javax.swing.JTextField genderField2;
     public static javax.swing.ButtonGroup genderG;
     public static javax.swing.ButtonGroup genderGroup;
+    public static javax.swing.JLabel idCheck;
+    public static javax.swing.JLabel idColor;
+    public static javax.swing.JLabel idColor1;
+    public static javax.swing.JLabel idColor14;
     public static javax.swing.JTextField idFieldNS;
     public static javax.swing.JLabel idLabel;
     public static javax.swing.JLabel idLabel1;
@@ -2668,8 +3034,10 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel11;
     public static javax.swing.JLabel jLabel12;
     public static javax.swing.JLabel jLabel13;
+    public static javax.swing.JLabel jLabel14;
     public static javax.swing.JLabel jLabel15;
     public static javax.swing.JLabel jLabel16;
+    public static javax.swing.JLabel jLabel17;
     public static javax.swing.JLabel jLabel18;
     public static javax.swing.JLabel jLabel19;
     public static javax.swing.JLabel jLabel2;
@@ -2689,23 +3057,26 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JPanel jPanel3;
     public static javax.swing.JPanel jPanel4;
     public static javax.swing.JPopupMenu jPopupMenu1;
+    public static javax.swing.JRadioButton jRadioButton1;
+    public static javax.swing.JRadioButton jRadioButton2;
     public static javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JScrollPane jScrollPane4;
     public static javax.swing.JSpinner jSpinner1;
     public static javax.swing.JTextField lastNameField;
-    public static javax.swing.JTextField lastNameField1;
     public static javax.swing.JTextField lastNameLabel;
+    public static javax.swing.JLabel lastnameCheck;
+    public static javax.swing.JLabel lastnameColor;
     public static javax.swing.JRadioButton male;
-    public static javax.swing.JRadioButton male1;
     public static javax.swing.JRadioButton maleG;
     public static javax.swing.JMenuBar menuBar;
     public static javax.swing.JTextField nameFieldC;
     public static javax.swing.JTextField nameFieldP;
-    public static javax.swing.JMenu newMenu;
     public static javax.swing.JMenuItem newProgram;
     public static javax.swing.JMenuItem newStudent;
     public static javax.swing.JMenuItem neweCollege;
+    public static javax.swing.JLabel programCheck;
+    public static javax.swing.JLabel programCodeCheck;
     public static javax.swing.JTextField programCodeField;
     public static javax.swing.JTextField programCodeField2;
     public static javax.swing.JTextField programCodeField3;
@@ -2713,7 +3084,10 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField programCodeField5;
     public static javax.swing.JTextField programCodeN;
     public static javax.swing.JTextField programCodeP;
+    public static javax.swing.JLabel programColor;
     public static javax.swing.JPanel programListPanel;
+    public static javax.swing.JLabel programNameCheck;
+    public static javax.swing.JLabel programNameColor;
     public static javax.swing.JTable programTable;
     public static javax.swing.JButton refreshCollege;
     public static javax.swing.JButton refreshProgram;
@@ -2724,6 +3098,7 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField searchFieldCollege;
     public static javax.swing.JTextField searchProgram;
     public static javax.swing.JTable studentTable;
+    public static javax.swing.JLabel yearLevelCheck;
     public static javax.swing.JTextField yearLevelField;
     // End of variables declaration//GEN-END:variables
 }
