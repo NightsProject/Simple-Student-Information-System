@@ -21,10 +21,10 @@ public class Write {
             count = 0;
             indicator = 0;
 
-            while(indicator < Main.college.length){
+            while(indicator < Main.collegeData.size()){
                 
                 indicator++;
-                if(Main.END.equals(Main.college[count].getCollegeCode())){
+                if(Main.END.equals(Main.collegeData.get(count).getCollegeCode())){
                     break;
                 } 
                 
@@ -35,7 +35,7 @@ public class Write {
                         write = new FileWriter(collegeData, append);
                 }
                 
-              write.write(Main.college[count].collegeData() + "\n");
+              write.write(Main.collegeData.get(count).collegeData() + "\n");
                 count++;
             }
             
@@ -62,10 +62,10 @@ public class Write {
             count = 0;
             indicator = 0;
 
-            while(indicator < Main.program.length){
+            while(indicator < Main.programData.size()){
                 
                 indicator++;
-                if(Main.END.equals(Main.program[count].getProgramCode())){
+                if(Main.END.equals(Main.programData.get(count).getProgramCode())){
                     break;
                 } 
                 
@@ -76,7 +76,7 @@ public class Write {
                         write = new FileWriter(programData, append);
                 }
                 
-              write.write(Main.program[count].programData() + "\n");
+              write.write(Main.programData.get(count).programData() + "\n");
                 count++;
             }
             
@@ -103,10 +103,10 @@ public class Write {
             count = 0;
             indicator = 0;
             
-            while(indicator < Main.student.length){
+            while(indicator < Main.studentData.size()){
                 
                 indicator++;
-                if(Main.END.equals(Main.student[count].getIdNum())){
+                if(Main.END.equals(Main.studentData.get(count).getIdNum())){
                     break;
                 } 
                 
@@ -117,7 +117,7 @@ public class Write {
                         write = new FileWriter(studentData, append);
                 }
                 
-              write.write(Main.student[count].studentData() + "\n");
+              write.write(Main.studentData.get(count).studentData() + "\n");
                 count++;
             }
             
