@@ -259,7 +259,9 @@ public class MainWindow extends javax.swing.JFrame {
 
         AddStudentDialog.setTitle("New Student");
         AddStudentDialog.setBackground(new java.awt.Color(23, 58, 43));
-        AddStudentDialog.setMinimumSize(new java.awt.Dimension(551, 572));
+        AddStudentDialog.setMaximumSize(new java.awt.Dimension(549, 535));
+        AddStudentDialog.setMinimumSize(new java.awt.Dimension(549, 535));
+        AddStudentDialog.setPreferredSize(new java.awt.Dimension(549, 535));
         AddStudentDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(20, 51, 37));
@@ -328,7 +330,7 @@ public class MainWindow extends javax.swing.JFrame {
                 cancelButtonMouseClicked(evt);
             }
         });
-        jPanel2.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 110, 30));
+        jPanel2.add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 110, 30));
 
         idFieldNS.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
         jPanel2.add(idFieldNS, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 240, 50));
@@ -339,7 +341,7 @@ public class MainWindow extends javax.swing.JFrame {
                 confirmButtonMouseClicked(evt);
             }
         });
-        jPanel2.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, 110, 30));
+        jPanel2.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 110, 30));
 
         comboBoxYL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
         comboBoxYL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, null));
@@ -377,7 +379,7 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2.add(programCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 240, 20));
         jPanel2.add(genderCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 240, 20));
 
-        AddStudentDialog.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 570));
+        AddStudentDialog.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 540));
 
         jMenuItem1.setText("jMenuItem1");
 
