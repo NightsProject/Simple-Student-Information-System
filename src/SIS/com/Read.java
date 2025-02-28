@@ -2,6 +2,9 @@
 package SIS.com;
 
 import SIS.Main;
+import SIS.com.objects.College;
+import SIS.com.objects.Program;
+import SIS.com.objects.Student;
 import java.io.*;
 import java.util.*;
 
@@ -21,8 +24,6 @@ public class Read {
             Scanner scan = new Scanner(collegeData);
             
           
-            
-            int i = 0;
             while(scan.hasNextLine()){
                 
                 
@@ -32,16 +33,14 @@ public class Read {
                 data = scan.nextLine();
                 
                 if(data.equals(Main.END_LINE)){
-                    Main.college[i].setCollegeCode("END");
+                    Main.collegeData.add(new College("END"));
                     break;
                 }
                 
                 collegeDataFormat = data.split(",");
-    
-                Main.college[i].setCollegeCode(collegeDataFormat[0]);
-                Main.college[i].setCollegeName(collegeDataFormat[1]);
-                        
-                i++;
+                Main.collegeData.add(new College(collegeDataFormat[0], collegeDataFormat[1]));
+                
+                
             }
             scan.close();
 
@@ -63,7 +62,7 @@ public class Read {
             File programData = new File(Main.programDataFilePath);
             Scanner scan = new Scanner(programData);
             
-            int i = 0;
+           
             while(scan.hasNextLine()){
                 
                 
@@ -73,17 +72,14 @@ public class Read {
                 data = scan.nextLine();
                 
                 if(data.equals(Main.END_LINE)){
-                    Main.program[i].setProgramCode("END");
+                    Main.programData.add(new Program(Main.END));
                     break;
                 }
                 
                 programDataFormat = data.split(",");
     
-                Main.program[i].setProgramCode(programDataFormat[0]);
-                Main.program[i].setProgramName(programDataFormat[1]);
-                Main.program[i].setCollegeCode(programDataFormat[2]);
-                
-                i++;
+                Main.programData.add(new Program(programDataFormat[0], programDataFormat[1], programDataFormat[2]));
+              
             }
             scan.close();
 
@@ -105,7 +101,7 @@ public class Read {
             File studentData = new File(Main.studentDataFilePath);
             Scanner scan = new Scanner(studentData);
             
-            int i = 0;
+   
             while(scan.hasNextLine()){
                 
                 
@@ -115,23 +111,14 @@ public class Read {
                 data = scan.nextLine();
                 
                 if(data.equals(Main.END_LINE)){
-                    Main.student[i].setIdNum("END");
+                    Main.studentData.add(new Student(Main.END));
                     break;
                 }
                 
                 studentDataFormat = data.split(",");
-    
-                Main.student[i].setIdNum(studentDataFormat[0]);
-                Main.student[i].setFirstName(studentDataFormat[1]);
-                Main.student[i].setLastName(studentDataFormat[2]);
-                Main.student[i].setYearLevel(studentDataFormat[3]);
-                Main.student[i].setGender(studentDataFormat[4]);
-                Main.student[i].setProgramCode(studentDataFormat[5]);
-                Main.student[i].setCollegeCode(studentDataFormat[6]);
-               
-                
-                
-                i++;
+                Main.studentData.add(new Student(studentDataFormat[0], studentDataFormat[1], studentDataFormat[2], studentDataFormat[3], studentDataFormat[4], studentDataFormat[5]));
+
+             
             }
             scan.close();
 

@@ -109,3 +109,23 @@ ToDo
 bug 
     the uniqueNumGen don't generate a 0001 id after i deleted it
         -manually provide it
+
+feb 24
+
+bug
+    the edit button can be clicked wven though there is no datas in the text field
+    the edit and cancel button's color wont change even though i set it to green but when in clicked the button it will change color
+    set focusable of edit and delete button to fals ein activate window
+    set visible of save and cancel button in program and college to false in activate windows listener
+
+    popup to notify before proceeding to delete the program: check the student table first if the program exists/used by the students
+    when generating a unique id it will not generate  number between an idnumber
+    chcekpoint for YearLevel
+    checkpoint for saveStudentedit method
+    
+    in combo boxes the model should be selected from the data
+    //waiting popup to notify if you want to proceed to edit and the students data will also be modified
+
+    change the object array to arrayList
+
+use auto complete in program code student

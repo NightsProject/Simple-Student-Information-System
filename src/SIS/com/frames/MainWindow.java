@@ -122,14 +122,16 @@ public class MainWindow extends javax.swing.JFrame {
         idLabel18 = new javax.swing.JLabel();
         collegeCodeC = new javax.swing.JTextField();
         collegeCodeN = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        editCollege = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         searchFieldCollege = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         comboBoxSearchCollege = new javax.swing.JComboBox<>();
         refreshCollege = new javax.swing.JButton();
+        deleteCollege = new javax.swing.JButton();
+        cancelCollege = new javax.swing.JButton();
+        saveCollege = new javax.swing.JButton();
         programListPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         programTable = new javax.swing.JTable();
@@ -488,7 +490,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(studentTable);
 
-        MainMenu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 860, 300));
+        MainMenu.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 860, 300));
 
         jPanel1.setBackground(new java.awt.Color(20, 51, 37));
         jPanel1.setMaximumSize(new java.awt.Dimension(260, 310));
@@ -634,7 +636,7 @@ public class MainWindow extends javax.swing.JFrame {
         comboBoxSP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(comboBoxSP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 90, 30));
 
-        MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 60, 270, 300));
+        MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 150, 270, 300));
 
         searchField.setForeground(new java.awt.Color(0, 0, 0));
         searchField.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.darkGray, null));
@@ -643,27 +645,27 @@ public class MainWindow extends javax.swing.JFrame {
                 searchFieldKeyReleased(evt);
             }
         });
-        MainMenu.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 230, 30));
+        MainMenu.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 230, 30));
 
         jLabel6.setFont(new java.awt.Font("DejaVu Serif", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("SEARCH");
-        MainMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 70, 30));
+        MainMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 70, 30));
 
         comboBoxSearch.setForeground(new java.awt.Color(0, 0, 0));
         comboBoxSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Number", "Firstname", "Lastname", "Year Level", "Gender", "College Code", "Program Code" }));
         comboBoxSearch.setToolTipText("");
-        MainMenu.add(comboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, 20));
+        MainMenu.add(comboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, -1, 20));
 
         jLabel13.setFont(new java.awt.Font("sansserif", 0, 10)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(153, 153, 153));
         jLabel13.setText("SEARCH BY:");
-        MainMenu.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, 10));
+        MainMenu.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, -1, 10));
 
         jLabel18.setFont(new java.awt.Font("DejaVu Serif", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(153, 153, 153));
         jLabel18.setText("STUDENTS LIST");
-        MainMenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        MainMenu.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         collegeListPanel.setBackground(new java.awt.Color(20, 51, 37));
         collegeListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -717,15 +719,15 @@ public class MainWindow extends javax.swing.JFrame {
         collegeCodeN.setFocusable(false);
         collegeListPanel.add(collegeCodeN, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 250, 30));
 
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("CANCEL");
-        jButton4.setFocusable(false);
-        collegeListPanel.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 120, -1, 20));
-
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("EDIT");
-        jButton3.setFocusable(false);
-        collegeListPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 120, -1, 20));
+        editCollege.setForeground(new java.awt.Color(0, 0, 0));
+        editCollege.setText("EDIT");
+        editCollege.setFocusable(false);
+        editCollege.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editCollegeMouseClicked(evt);
+            }
+        });
+        collegeListPanel.add(editCollege, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 120, -1, 20));
 
         jLabel15.setFont(new java.awt.Font("DejaVu Serif", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(153, 153, 153));
@@ -761,6 +763,34 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
         collegeListPanel.add(refreshCollege, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 110, 20));
+
+        deleteCollege.setForeground(new java.awt.Color(0, 0, 0));
+        deleteCollege.setText("DELETE");
+        deleteCollege.setFocusable(false);
+        deleteCollege.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteCollegeMouseClicked(evt);
+            }
+        });
+        collegeListPanel.add(deleteCollege, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 120, -1, 20));
+
+        cancelCollege.setForeground(new java.awt.Color(0, 0, 0));
+        cancelCollege.setText("CANCEL");
+        cancelCollege.setFocusable(false);
+        cancelCollege.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelCollegeMouseClicked(evt);
+            }
+        });
+        collegeListPanel.add(cancelCollege, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 120, -1, 20));
+
+        saveCollege.setText("SAVE");
+        saveCollege.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveCollegeMouseClicked(evt);
+            }
+        });
+        collegeListPanel.add(saveCollege, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 120, -1, 20));
 
         MainMenu.add(collegeListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 1120, 180));
 
@@ -917,9 +947,9 @@ public class MainWindow extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
-        MainMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 30, -1, 20));
+        MainMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, -1, 20));
 
-        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1148, 860));
+        getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1830, 860));
 
         menuBar.setBackground(new java.awt.Color(7, 27, 20));
         menuBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1014,7 +1044,62 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_addButtonCMouseClicked
 
     private void addButtonPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonPMouseClicked
-        for(int i = 0; i < Main.programData.size(); i++){
+
+        
+        boolean checkpoint = true;
+        
+
+        String collegeCode = codeFieldC.getText();
+        String programName = nameFieldP.getText();
+        
+        //check program Code if blank
+        if(codeFieldP.getText().isBlank()){
+            checkpoint = false;
+        } else {
+            
+            String programCode = codeFieldP.getText();
+            
+            //check if programCode is unique
+            for(int i = 0; i < Main.programData.size(); i++){
+        
+                if(Main.END.equals(Main.programData.get(i).getProgramCode())){
+                    break;
+                }
+                
+                if(programCode.equals(Main.programData.get(i).getProgramCode())){
+                    checkpoint = false;
+                }
+        
+            }
+            
+            if(!programCode.matches("[a-zA-Z ]")){
+                checkpoint = false;
+            //notify that the program characters should not contain invalid chars and or should be greater than 2
+            }
+            
+            
+        }
+        
+        
+        
+        
+        //check program Name
+        if(nameFieldP.getText().isEmpty()){
+            checkpoint = false;
+            //notify that the neme field should not be empty
+        }
+        
+        
+        
+        
+      
+
+
+
+
+
+        if(checkpoint){
+            for(int i = 0; i < Main.programData.size(); i++){
             if(Main.END.equals(Main.programData.get(i).getProgramCode())){
                 Main.programData.get(i).setProgramCode(codeFieldP.getText());
                 Main.programData.get(i).setProgramName(nameFieldP.getText());
@@ -1039,6 +1124,10 @@ public class MainWindow extends javax.swing.JFrame {
         codeFieldP.setText(null);
         nameFieldP.setText(null);
         comboBoxCC.removeAllItems();
+            
+        }
+
+     
     }//GEN-LAST:event_addButtonPMouseClicked
 
     private void cancelButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelButtonMouseClicked
@@ -1308,6 +1397,11 @@ public class MainWindow extends javax.swing.JFrame {
         deleteProgram.setVisible(true);
         collegeCodeP.setVisible(true);
 
+        programCodeP.setFocusable(false);
+        programCodeN.setFocusable(false);
+        collegeCodeP.setFocusable(false);
+        
+         SSIS.setEnabled(true);
         saveProgramEdit();
 
         Write.writeProgram();
@@ -1360,11 +1454,13 @@ public class MainWindow extends javax.swing.JFrame {
         editProgram.setVisible(true);
         deleteProgram.setVisible(true);
         collegeCodeP.setVisible(true);
+         SSIS.setEnabled(true);
+        
+        programCodeP.setFocusable(false);
+        programCodeN.setFocusable(false);
+        collegeCodeP.setFocusable(false);
 
-        int selectedRow = programTable.getSelectedRow();
-        programCodeP.setText((String)programTable.getValueAt(selectedRow, 0));
-        programCodeN.setText((String)programTable.getValueAt(selectedRow, 1));
-        collegeCodeP.setText((String)programTable.getValueAt(selectedRow, 2));
+        getProgramTableRowData();
 
     }//GEN-LAST:event_cancelProgramMouseClicked
 
@@ -1385,12 +1481,10 @@ public class MainWindow extends javax.swing.JFrame {
                 loadProgramData();
                 Write.writeProgram();
                 clearProgramFields();
-                deleteProgram.setVisible(false);
-                editProgram.setVisible(false);
             }
         }
 
-        System.out.print(Main.studentData.get(0).getProgramCode());
+
         //student modification
         for(int i = 0; i < Main.studentData.size(); i++){
 
@@ -1403,7 +1497,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         }
 
-        System.out.print(Main.studentData.get(0).getProgramCode());
     }//GEN-LAST:event_deleteProgramMouseClicked
 
     private void programTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_programTableMouseClicked
@@ -1482,6 +1575,8 @@ public class MainWindow extends javax.swing.JFrame {
                 editButton.setEnabled(false);
             }
         }
+        
+        
 
     }//GEN-LAST:event_deleteMouseClicked
 
@@ -1598,6 +1693,105 @@ public class MainWindow extends javax.swing.JFrame {
         editButton.setEnabled(true);
     }//GEN-LAST:event_studentTableMouseClicked
 
+    private void deleteCollegeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteCollegeMouseClicked
+        String temp = collegeCodeC.getText();
+
+        //popup to notify before proceeding to delete the college
+
+        //program mdelete
+        for(int i = 0; i < Main.collegeData.size(); i++){
+            if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
+                return;
+            }
+
+            if(temp.equals(Main.collegeData.get(i).getCollegeCode())){
+                Main.collegeData.remove(i);
+                College.sortCollegeByCode();
+                loadCollegeData();
+                Write.writeCollege();
+                clearCollegeFields();
+            }
+        }
+        
+          //#program modification
+        for(int i = 0; i < Main.programData.size(); i++){
+
+            if(temp.equals(Main.programData.get(i).getCollegeCode())){
+                Main.programData.get(i).setCollegeCode("none");
+                Program.sortProgramsByCode();
+                loadProgramData();
+                Write.writeProgram();
+            }
+
+        }
+
+    }//GEN-LAST:event_deleteCollegeMouseClicked
+
+    private void saveCollegeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveCollegeMouseClicked
+        
+        //waiting popup to notify if you want to proceed to save the modification, the program list will also be modified
+
+        saveCollege.setVisible(false);
+        cancelCollege.setVisible(false);
+       
+
+        editCollege.setVisible(true);
+        deleteCollege.setVisible(true);
+        
+        collegeCodeC.setFocusable(false);
+        collegeCodeN.setFocusable(false);
+        
+        SSIS.setEnabled(true);
+
+        saveCollegeEdit();
+
+        Write.writeCollege();
+        Write.writeProgram();
+
+        clearCollegeFields();
+        clearProgramFields();
+
+        loadProgramData();
+        loadCollegeData();
+    }//GEN-LAST:event_saveCollegeMouseClicked
+
+    private void editCollegeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editCollegeMouseClicked
+       
+        if(!collegeCodeC.getText().isEmpty()){
+            
+            editCollege.setVisible(false);
+            deleteCollege.setVisible(false);
+
+            saveCollege.setVisible(true);
+            cancelCollege.setVisible(true);
+
+            collegeTable.setFocusable(false);
+            collegeTable.setEnabled(false);
+            SSIS.setEnabled(false);
+
+            collegeCodeC.setEditable(true);
+            collegeCodeC.setFocusable(true);
+
+            collegeCodeN.setEditable(true);
+            collegeCodeN.setFocusable(true);
+
+        }
+    }//GEN-LAST:event_editCollegeMouseClicked
+
+    private void cancelCollegeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelCollegeMouseClicked
+        
+        cancelCollege.setVisible(false);
+        saveCollege.setVisible(false);
+
+        editCollege.setVisible(true);
+        deleteCollege.setVisible(true);
+         SSIS.setEnabled(true);
+        
+        collegeCodeC.setFocusable(false);
+        collegeCodeN.setFocusable(false);
+        getCollegeTableRowData();
+    }//GEN-LAST:event_cancelCollegeMouseClicked
+
     
     public static void showStudentDialog(){
         AddStudentDialog.setLocationByPlatform(true);
@@ -1705,6 +1899,12 @@ public class MainWindow extends javax.swing.JFrame {
        programCodeP.setText("");
        programCodeN.setText("");
        collegeCodeP.setText("");
+   }
+//-------------------------------------------------------------------------------------------
+   public static void clearCollegeFields(){
+       
+       collegeCodeC.setText("");
+       collegeCodeN.setText("");
    }
    
     
@@ -2224,9 +2424,8 @@ public class MainWindow extends javax.swing.JFrame {
     
     public static void saveProgramEdit(){
         
-       
         
-        //checkpoint
+        //checkpoints
         
         
         int temp = programTable.getSelectedRow();
@@ -2261,6 +2460,44 @@ public class MainWindow extends javax.swing.JFrame {
         
     }
     
+//-----------------------------------------------------------------------------------------------------
+    
+      public static void saveCollegeEdit(){
+        
+        
+        //checkpoints
+        
+        
+        int temp = collegeTable.getSelectedRow();
+        String pastCollegeCode = (String) collegeTable.getValueAt(temp, 0);
+       
+        for(int i = 0; i < Main.collegeData.size(); i++){
+            
+            if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
+                break;
+            }
+            
+            if(pastCollegeCode.equals((Main.collegeData.get(i).getCollegeCode()))){
+                Main.collegeData.get(i).setCollegeCode(collegeCodeC.getText());
+                Main.collegeData.get(i).setCollegeName(collegeCodeN.getText());
+            }
+        }
+        
+        
+        //modify also the Program data
+        for(int i = 0; i < Main.programData.size(); i++){
+            
+            if (Main.END.equals(Main.programData.get(i).getProgramCode())) {
+                break;
+            }
+            
+            if(pastCollegeCode.equals(Main.programData.get(i).getCollegeCode())){
+                Main.programData.get(i).setCollegeCode(collegeCodeC.getText());
+            }
+            
+        }
+        
+    }
 //-----------------------------------------------------------------------------------------------------
    public static String genNum() {
        
@@ -2367,6 +2604,7 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JButton cancelButton;
     public static javax.swing.JButton cancelButtonAddC;
     public static javax.swing.JButton cancelButtonAddP;
+    public static javax.swing.JButton cancelCollege;
     public static javax.swing.JButton cancelProgram;
     public static javax.swing.JTextField codeFieldC;
     public static javax.swing.JTextField codeFieldP;
@@ -2388,8 +2626,10 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JComboBox<String> comboBoxYearL;
     public static javax.swing.JButton confirmButton;
     public static javax.swing.JButton delete;
+    public static javax.swing.JButton deleteCollege;
     public static javax.swing.JButton deleteProgram;
     public static javax.swing.JButton editButton;
+    public static javax.swing.JButton editCollege;
     public static javax.swing.JButton editProgram;
     public static javax.swing.JRadioButton female;
     public static javax.swing.JRadioButton female1;
@@ -2422,8 +2662,6 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JLabel idLabel9;
     public static javax.swing.JTextField idNumberField;
     public static javax.swing.JButton jButton1;
-    public static javax.swing.JButton jButton3;
-    public static javax.swing.JButton jButton4;
     public static javax.swing.JDesktopPane jDesktopPane1;
     public static javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel jLabel10;
@@ -2480,6 +2718,7 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JButton refreshCollege;
     public static javax.swing.JButton refreshProgram;
     public static javax.swing.JButton saveButton;
+    public static javax.swing.JButton saveCollege;
     public static javax.swing.JButton saveProgram;
     public static javax.swing.JTextField searchField;
     public static javax.swing.JTextField searchFieldCollege;

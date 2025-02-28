@@ -13,6 +13,7 @@ import SIS.com.Initialize;
 
 import SIS.com.frames.MainWindow;
 import com.formdev.flatlaf.FlatDarkLaf;
+import java.util.ArrayList;
 
 public class Main {
     
@@ -34,12 +35,13 @@ public class Main {
     //Format
     public static int COLLEGEDATA_FORMAT = 2; // Code/Name
     public static int PROGRAMDATA_FORMAT = 3; // Code/Name/CollegeCode
-    public static int STUDENTDATA_FORMAT = 7; // IdNum/Firstname/Lastname/YearLevel/Gender/CollegeCode/ProgramCode
+    public static int STUDENTDATA_FORMAT = 6; // IdNum/Firstname/Lastname/YearLevel/Gender/ProgramCode
     
-    //Object array
-    public static College college[] = new College[MAX_COLLEGE];
-    public static Program program[] = new Program[MAX_PROGRAM];
-    public static Student student[] = new Student[MAX_STUDENT];
+  
+    //ArrayList
+    public static ArrayList<College> collegeData = new ArrayList<>();
+    public static ArrayList<Program> programData = new ArrayList<>();
+    public static ArrayList<Student> studentData = new ArrayList<>();
     
     //Arrays
     public static String YearLevel[] = new String[50];
@@ -54,21 +56,8 @@ public class Main {
         FlatDarkLaf.setup();
         //-----------------------
         
-        
-        //instialize object arrays
-        for(int i = 0; i < MAX_COLLEGE; i++){
-            college[i] = new College();
-        }
-        
-        for(int i = 0; i < MAX_PROGRAM; i++){
-            program[i] = new Program();
-        }
-        
-        for(int i = 0; i < MAX_STUDENT; i++){
-            student[i] = new Student();
-        }
-        //------------------------
-        
+       
+       
         Initialize.readyFiles();
         Read.readDataCsv();
        
@@ -78,6 +67,12 @@ public class Main {
         
         showMenuForm();
         
+        
+        for(int i = 0; i < collegeData.size(); i++){
+            System.out.print(collegeData.get(i).getCollegeCode() +" " + collegeData.get(i).getCollegeName() +"\n" );
+        }
+        
+       
     }
     
     public static void showMenuForm(){  
