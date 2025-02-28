@@ -32,7 +32,7 @@ minimize constants
 set look and feel to flat Laf Dark - Done
 
 checkpoints
-need to sort the students by IdNum
+need to sort the students by IdNum - done
 
 Done:
 read data from csv doc
@@ -41,9 +41,9 @@ read data from csv doc
 
 Problems encountered
 
-- the showLabel in MainMenu does not function properly
+- the showLabel in MainMenu does not function properly - done
 
--the modality cant block the other window on college and program dialog
+-the modality cant block the other window on college and program dialog - done
 
 
 feb 5
@@ -67,7 +67,7 @@ ToDo:
     delete a data -done
 
 problem
-    year- should no be editable?.
+    year- should no be editable?. - done
    
 
 feb 21
@@ -98,34 +98,32 @@ ToDo
     create a defaults config file
 
     added checkpoints for adding a new student - done
-    add a checkpoint for adding college
-    add a checkpoint for adding program 
-    add a checkpoint in save button main window
-    fix layout
+    add a checkpoint for adding college -done
+    add a checkpoint for adding program -done
+    add a checkpoint in save button main window -done
+    fix layout - done
 
-    fix the college table
-    fix the program table
+    fix the college table - done
+    fix the program table - done
 
 bug 
-    the uniqueNumGen don't generate a 0001 id after i deleted it
-        -manually provide it
+    the uniqueNumGen don't generate a 0001 id after i deleted it -done
+        -manually provide it -done
 
 feb 24
 
 bug
-    the edit button can be clicked wven though there is no datas in the text field
-    the edit and cancel button's color wont change even though i set it to green but when in clicked the button it will change color
-    set focusable of edit and delete button to fals ein activate window
-    set visible of save and cancel button in program and college to false in activate windows listener
+    the edit button can be clicked wven though there is no datas in the text field - done
+    the edit and cancel button's color wont change even though i set it to green but when in clicked the button it will change color - done
+    set focusable of edit and delete button to fals ein activate window -done
+    set visible of save and cancel button in program and college to false in activate windows listener -done
 
-    popup to notify before proceeding to delete the program: check the student table first if the program exists/used by the students
-    when generating a unique id it will not generate  number between an idnumber
-    chcekpoint for YearLevel
-    checkpoint for saveStudentedit method
+    popup to notify before proceeding to delete the program: check the student table first if the program exists/used by the students -done
+    when generating a unique id it will not generate  number between an idnumber - done
+    chcekpoint for YearLevel -done
+    checkpoint for saveStudentedit method -done
     
-    in combo boxes the model should be selected from the data
+    in combo boxes the model should be selected from the data - done
     //waiting popup to notify if you want to proceed to edit and the students data will also be modified
 
-    change the object array to arrayList
-
-use auto complete in program code student
+    change the object array to arrayList - done
