@@ -945,7 +945,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("DejaVu Serif", 2, 36)); // NOI18N
         jLabel14.setText("SSimple");
-        MainMenu.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
+        MainMenu.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 160, -1));
 
         jLabel17.setText("v 1.0.1");
         MainMenu.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, -1, -1));
