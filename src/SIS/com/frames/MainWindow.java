@@ -210,10 +210,8 @@ public class MainWindow extends javax.swing.JFrame {
         AddCollegeDialog.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 300));
 
         AddProgramDialog.setTitle("New Program");
-        AddProgramDialog.setMaximumSize(new java.awt.Dimension(330, 391));
         AddProgramDialog.setMinimumSize(new java.awt.Dimension(330, 391));
         AddProgramDialog.setModal(true);
-        AddProgramDialog.setPreferredSize(new java.awt.Dimension(330, 391));
         AddProgramDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("DejaVu Serif", 1, 14)); // NOI18N
@@ -259,6 +257,7 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(20, 51, 37));
         AddProgramDialog.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 390));
 
+        AddStudentDialog.setTitle("New Student");
         AddStudentDialog.setBackground(new java.awt.Color(23, 58, 43));
         AddStudentDialog.setMinimumSize(new java.awt.Dimension(551, 572));
         AddStudentDialog.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
