@@ -1653,7 +1653,7 @@ public class MainWindow extends javax.swing.JFrame {
         //program mdelete
         for(int i = 0; i < Main.programData.size(); i++){
             if(Main.END.equals(Main.programData.get(i).getProgramCode())){
-                return;
+                break;
             }
 
             if(temp.equals(Main.programData.get(i).getProgramCode())){
@@ -1748,7 +1748,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         for(int i = 0; i < Main.studentData.size(); i++){
             if(Main.END.equals(Main.studentData.get(i).getIdNum())){
-                return;
+                break;
             }
 
             if(temp.equals(Main.studentData.get(i).getIdNum())){
@@ -1983,7 +1983,7 @@ public class MainWindow extends javax.swing.JFrame {
         //program mdelete
         for(int i = 0; i < Main.collegeData.size(); i++){
             if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
-                return;
+                break;
             }
 
             if(temp.equals(Main.collegeData.get(i).getCollegeCode())){
