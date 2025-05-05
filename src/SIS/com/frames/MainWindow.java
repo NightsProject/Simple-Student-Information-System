@@ -7,11 +7,10 @@ import SIS.com.Write;
 import SIS.com.objects.College;
 import SIS.com.objects.Program;
 import java.awt.Color;
-
 import java.awt.event.*;
 import java.util.function.Predicate;
 import javax.swing.JLabel;
-import javax.swing.JTable;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -22,7 +21,6 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -106,9 +104,6 @@ public class MainWindow extends javax.swing.JFrame {
         delete = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         comboBoxSP = new javax.swing.JComboBox<>();
-        idColor = new javax.swing.JLabel();
-        firstnameColor = new javax.swing.JLabel();
-        lastnameColor = new javax.swing.JLabel();
         searchField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         comboBoxSearch = new javax.swing.JComboBox<>();
@@ -132,7 +127,6 @@ public class MainWindow extends javax.swing.JFrame {
         cancelCollege = new javax.swing.JButton();
         saveCollege = new javax.swing.JButton();
         collegeName = new javax.swing.JLabel();
-        collegeColor = new javax.swing.JLabel();
         programListPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         programTable = new javax.swing.JTable();
@@ -153,8 +147,6 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         comboBoxSearchProgram = new javax.swing.JComboBox<>();
         refreshProgram = new javax.swing.JButton();
-        programColor = new javax.swing.JLabel();
-        programNameColor = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -599,19 +591,6 @@ public class MainWindow extends javax.swing.JFrame {
         comboBoxSP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(comboBoxSP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 90, 30));
 
-        idColor.setBackground(new java.awt.Color(255, 0, 0));
-        idColor.setToolTipText("programcode");
-        idColor.setOpaque(true);
-        jPanel1.add(idColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 10, 10));
-
-        firstnameColor.setBackground(new java.awt.Color(255, 0, 0));
-        firstnameColor.setOpaque(true);
-        jPanel1.add(firstnameColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 10, 10));
-
-        lastnameColor.setBackground(new java.awt.Color(255, 0, 0));
-        lastnameColor.setOpaque(true);
-        jPanel1.add(lastnameColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 10, 10));
-
         MainMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 140, 290, -1));
 
         searchField.setForeground(new java.awt.Color(204, 204, 204));
@@ -775,10 +754,6 @@ public class MainWindow extends javax.swing.JFrame {
         collegeName.setOpaque(true);
         collegeListPanel.add(collegeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 10, 10));
 
-        collegeColor.setBackground(new java.awt.Color(255, 0, 0));
-        collegeColor.setOpaque(true);
-        collegeListPanel.add(collegeColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 40, 10, 10));
-
         MainMenu.add(collegeListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 1150, 180));
 
         programListPanel.setBackground(new java.awt.Color(20, 51, 37));
@@ -922,14 +897,6 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
         programListPanel.add(refreshProgram, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 110, 20));
-
-        programColor.setBackground(new java.awt.Color(255, 0, 0));
-        programColor.setOpaque(true);
-        programListPanel.add(programColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 40, 10, 10));
-
-        programNameColor.setBackground(new java.awt.Color(255, 0, 0));
-        programNameColor.setOpaque(true);
-        programListPanel.add(programNameColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 10, 10));
 
         MainMenu.add(programListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 1160, 190));
 
@@ -1418,11 +1385,7 @@ public class MainWindow extends javax.swing.JFrame {
         saveButton.setVisible(false);
         cancel.setVisible(false);
         
-        idColor.setVisible(false);
-        firstnameColor.setVisible(false);
-        lastnameColor.setVisible(false);
- 
-        
+    
      
         comboBoxYearL.setVisible(false);
         
@@ -1430,12 +1393,7 @@ public class MainWindow extends javax.swing.JFrame {
         saveProgram.setVisible(false);
         cancelProgram.setVisible(false);
         comboBoxCCP.setVisible(false);
-        
-        programColor.setVisible(false);
-        programNameColor.setVisible(false);
-        
-           
-        collegeColor.setVisible(false);
+    
         collegeName.setVisible(false);
        
         loadStudentData();
@@ -1500,24 +1458,20 @@ public class MainWindow extends javax.swing.JFrame {
         //waiting popup to notify if you want to proceed to edit and the students data will also be modified
         
         boolean checkpoint = true;
-        
-        programColor.setVisible(false);
-        programNameColor.setVisible(false);
-        
+    
         //check program Code if blank
         if(programCodeP.getText().isBlank()){
             checkpoint = false;
-              programColor.setVisible(true);
-              programColor.setToolTipText("It's Empty");
+            JOptionPane.showMessageDialog(null, "Program Code cannot be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+  
         } else {
             
             String programCode = programCodeP.getText().toLowerCase();
             
             if(!programCode.matches("[a-zA-Z ]+")){
                 checkpoint = false;
-                programColor.setVisible(true);
-                programColor.setToolTipText("Alphabetical Letters Only");
-          
+                JOptionPane.showMessageDialog(null, "Program Code must contain only alphabetical letters.", "Warning", JOptionPane.WARNING_MESSAGE);
+ 
             } else {
                 
                 
@@ -1534,8 +1488,8 @@ public class MainWindow extends javax.swing.JFrame {
                 
                     if(programCode.equals(Main.programData.get(i).getProgramCode().toLowerCase())){
                         checkpoint = false;
-                        programColor.setVisible(true);
-                        programColor.setToolTipText("Program Code Exists");
+                        JOptionPane.showMessageDialog(null, "Program Code already exists.", "Warning", JOptionPane.WARNING_MESSAGE);
+ 
                     }
                     }
           
@@ -1550,44 +1504,57 @@ public class MainWindow extends javax.swing.JFrame {
         //check program Name
         if(programCodeN.getText().isBlank()){
             checkpoint = false;
-            programNameColor.setVisible(true);
-            programNameColor.setToolTipText("* It's Empty");
+            JOptionPane.showMessageDialog(null, "Program Name cannot be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+  
         } else {
             
             String programName = programCodeN.getText();
             if(!programName.matches("[a-zA-Z ]+")){
                checkpoint = false;
-               programNameColor.setVisible(true);
-               programNameColor.setToolTipText("* Alphabetical Letters Only");
+               JOptionPane.showMessageDialog(null, "Program Name must contain only alphabetical letters.", "Warning", JOptionPane.WARNING_MESSAGE);
+ 
             }
             
         }
         
-        
-        if(checkpoint){
-        saveProgram.setVisible(false);
-        cancelProgram.setVisible(false);
-        comboBoxCCP.setVisible(false);
+        if (checkpoint) {
+            int confirm = JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to save the changes? This will also update associated students.",
+                "Confirm Save",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE);
+    
+            if (confirm == JOptionPane.YES_OPTION) {
+                try {
+                    saveProgram.setVisible(false);
+                    cancelProgram.setVisible(false);
+                    comboBoxCCP.setVisible(false);
 
-        editProgram.setVisible(true);
-        deleteProgram.setVisible(true);
-        collegeCodeP.setVisible(true);
+                    editProgram.setVisible(true);
+                    deleteProgram.setVisible(true);
+                    collegeCodeP.setVisible(true);
 
-        programCodeP.setFocusable(false);
-        programCodeN.setFocusable(false);
-        collegeCodeP.setFocusable(false);
-        
-         SSIS.setEnabled(true);
-        saveProgramEdit();
+                    programCodeP.setFocusable(false);
+                    programCodeN.setFocusable(false);
+                    collegeCodeP.setFocusable(false);
+                    
+                    SSIS.setEnabled(true);
+                    saveProgramEdit();
 
-        Write.writeProgram();
-        Write.writeStudent();
+                    Write.writeProgram();
+                    Write.writeStudent();
 
-        clearProgramFields();
-        clearStudentFields();
+                    clearProgramFields();
+                    clearStudentFields();
 
-        loadProgramData();
-        loadStudentData();
+                    loadProgramData();
+                    loadStudentData();
+                    JOptionPane.showMessageDialog(null, "Program updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Error updating program: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            
         }
         
         
@@ -1625,8 +1592,6 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void cancelProgramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelProgramMouseClicked
 
-        programColor.setVisible(false);
-        programNameColor.setVisible(false);
         
         cancelProgram.setVisible(false);
         saveProgram.setVisible(false);
@@ -1648,34 +1613,47 @@ public class MainWindow extends javax.swing.JFrame {
     private void deleteProgramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteProgramMouseClicked
         String temp = programCodeP.getText();
 
-        //popup to notify before proceeding to delete the program
-
-        //program mdelete
-        for(int i = 0; i < Main.programData.size(); i++){
-            if(Main.END.equals(Main.programData.get(i).getProgramCode())){
-                break;
-            }
-
-            if(temp.equals(Main.programData.get(i).getProgramCode())){
-                Main.programData.remove(i);
-                Program.sortProgramsByCode();
-                loadProgramData();
-                Write.writeProgram();
-                clearProgramFields();
-            }
+        if (temp.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please select a program to delete.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
+        int confirm = JOptionPane.showConfirmDialog(null,
+            "Deleting this program will set associated students' Program Code to 'none'.\nAre you sure you want to proceed?",
+            "Confirm Deletion",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.WARNING_MESSAGE);
 
-        //student modification
-        for(int i = 0; i < Main.studentData.size(); i++){
+        if (confirm == JOptionPane.YES_OPTION) {
+        //program mdelete
+            for(int i = 0; i < Main.programData.size(); i++){
+                if(Main.END.equals(Main.programData.get(i).getProgramCode())){
+                    break;
+                }
 
-            if(temp.equals(Main.studentData.get(i).getProgramCode())){
-                Main.studentData.get(i).setProgramCode("none");
-                Student.sortStudentArray();
-                loadStudentData();
-                Write.writeStudent();
+                if(temp.equals(Main.programData.get(i).getProgramCode())){
+                    Main.programData.remove(i);
+                    Program.sortProgramsByCode();
+                    loadProgramData();
+                    Write.writeProgram();
+                    clearProgramFields();
+                }
             }
 
+
+            //student modification
+            for(int i = 0; i < Main.studentData.size(); i++){
+
+                if(temp.equals(Main.studentData.get(i).getProgramCode())){
+                    Main.studentData.get(i).setProgramCode("none");
+                    Student.sortStudentArray();
+                    loadStudentData();
+                    Write.writeStudent();
+                }
+
+            }
+            JOptionPane.showMessageDialog(null, "Program deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+      
         }
 
     }//GEN-LAST:event_deleteProgramMouseClicked
@@ -1698,13 +1676,6 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_searchFieldKeyReleased
 
     private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
-
-
-        
-        idColor.setVisible(false);
-        firstnameColor.setVisible(false);
-        lastnameColor.setVisible(false);
-
         
         
         saveButton.setEnabled(false);
@@ -1735,9 +1706,6 @@ public class MainWindow extends javax.swing.JFrame {
         maleG.setVisible(false);
         femaleG.setVisible(false);
 
-        idColor.setOpaque(false);
-        
-        
         
         getStudentTableRowData();
 
@@ -1746,21 +1714,35 @@ public class MainWindow extends javax.swing.JFrame {
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
         String temp = idNumberField.getText();
 
-        for(int i = 0; i < Main.studentData.size(); i++){
-            if(Main.END.equals(Main.studentData.get(i).getIdNum())){
-                break;
-            }
-
-            if(temp.equals(Main.studentData.get(i).getIdNum())){
-                Main.studentData.remove(i);
-                Student.sortStudentArray();
-                loadStudentData();
-                Write.writeStudent();
-                clearStudentFields();
-            }
+        if (temp.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please select a student to delete.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        
-        
+         int confirm = JOptionPane.showConfirmDialog(null,
+        "Are you sure you want to delete this student?",
+        "Confirm Deletion",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.WARNING_MESSAGE);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+
+            for(int i = 0; i < Main.studentData.size(); i++){
+                if(Main.END.equals(Main.studentData.get(i).getIdNum())){
+                    break;
+                }
+
+                if(temp.equals(Main.studentData.get(i).getIdNum())){
+                    Main.studentData.remove(i);
+                    Student.sortStudentArray();
+                    loadStudentData();
+                    Write.writeStudent();
+                    clearStudentFields();
+                }
+            }
+            
+            JOptionPane.showMessageDialog(null, "Student deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+  
+        }
 
     }//GEN-LAST:event_deleteMouseClicked
 
@@ -1768,22 +1750,18 @@ public class MainWindow extends javax.swing.JFrame {
 
         boolean checkpoint = true;
   
-        idColor.setVisible(false);
-        firstnameColor.setVisible(false);
-        lastnameColor.setVisible(false);
-    
-        
           //unique id check
         if(idNumberField.getText().isBlank()){
             checkpoint = false;
-         
+            JOptionPane.showMessageDialog(null, "ID Number cannot be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+               
             
         } else {
             
             if(!idNumberField.getText().matches("\\d{4}-\\d{4}")){
                 checkpoint = false;
-                idColor.setVisible(true);
-             
+                JOptionPane.showMessageDialog(null, "ID Number must follow the format YYYY-NNNN.", "Warning", JOptionPane.WARNING_MESSAGE);
+   
             } else {
    
                 if(idNumberField.getText().length() == 9){
@@ -1799,8 +1777,8 @@ public class MainWindow extends javax.swing.JFrame {
             
                         if(idNumberField.getText().equals(Main.studentData.get(i).getIdNum())){
                             checkpoint = false;
-                            idColor.setVisible(true);
-                   
+                            JOptionPane.showMessageDialog(null, "ID Number already exists.", "Warning", JOptionPane.WARNING_MESSAGE);
+   
                         }
                         }   
                     }
@@ -1816,14 +1794,14 @@ public class MainWindow extends javax.swing.JFrame {
         //first name check
         if(firstNameLabel.getText().isBlank()){
             checkpoint = false;
-            firstnameColor.setVisible(true);
-           
+            JOptionPane.showMessageDialog(null, "First Name cannot be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+  
         } else {
             String firstname = firstNameLabel.getText();
             if(!firstname.matches("[a-zA-Z ]+")){
                checkpoint = false;
-               firstnameColor.setVisible(true);
-           
+               JOptionPane.showMessageDialog(null, "First Name must contain only alphabetical letters.", "Warning", JOptionPane.WARNING_MESSAGE);
+   
             } 
         }
      
@@ -1834,12 +1812,14 @@ public class MainWindow extends javax.swing.JFrame {
         //lastname check
         if(lastNameLabel.getText().isBlank()){
             checkpoint = false;
-                lastnameColor.setVisible(true);
+            JOptionPane.showMessageDialog(null, "Last Name cannot be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+ 
         } else {
             String lastname = lastNameLabel.getText();
             if(!lastname.matches("[a-zA-Z]+")){
                 checkpoint = false;
-                lastnameColor.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Last Name must contain only alphabetical letters.", "Warning", JOptionPane.WARNING_MESSAGE);
+        
             }
         }
        
@@ -1851,6 +1831,8 @@ public class MainWindow extends javax.swing.JFrame {
         //firstname and lastname check
         if(firstNameLabel.getText().isBlank() && lastNameLabel.getText().isBlank()){
             checkpoint = false;
+            JOptionPane.showMessageDialog(null, "Fist Name and Last Name should not be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+
         } else {
             
  
@@ -1870,8 +1852,8 @@ public class MainWindow extends javax.swing.JFrame {
                     //check if unique
                     if(firstname.equals(Main.studentData.get(i).getFirstName().toLowerCase()) && lastname.equals(Main.studentData.get(i).getLastName().toLowerCase())){
                         checkpoint = false;
-                        firstnameColor.setVisible(true);
-                        lastnameColor.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "First Name and Last Name already exists", "Warning", JOptionPane.WARNING_MESSAGE);
+
                     }
                 }
             }
@@ -1879,43 +1861,55 @@ public class MainWindow extends javax.swing.JFrame {
         }
        
         
-        if(checkpoint){
-
-        delete.setVisible(true);
-        editButton.setVisible(true);
-        saveButton.setVisible(false);
-        cancel.setVisible(false);
-
-        studentTable.setFocusable(true);
-        studentTable.setEnabled(true);
-        SSIS.setEnabled(true);
-
-        idNumberField.setFocusable(false);
-        firstNameLabel.setFocusable(false);
-        lastNameLabel.setFocusable(false);
-        yearLevelField.setFocusable(false);
-        genderField.setFocusable(false);
-        programCodeField.setFocusable(false);
-
-        programCodeField.setVisible(true);
-        yearLevelField.setVisible(true);
-        genderField.setVisible(true);
-
-        comboBoxSP.setVisible(false);
-        comboBoxYearL.setVisible(false);
-        maleG.setVisible(false);
-        femaleG.setVisible(false);
-
+        if (checkpoint) {
+            int confirm = JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to save the changes?",
+                "Confirm Save",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE);
         
-        //get the inputs in the labels and comboBox
-        saveStudentEdit();
-        Write.writeStudent();
+            if (confirm == JOptionPane.YES_OPTION) {
+                try {
+                    delete.setVisible(true);
+                    editButton.setVisible(true);
+                    saveButton.setVisible(false);
+                    cancel.setVisible(false);
 
-        Student.sortStudentArray();
-        clearStudentFields();
+                    studentTable.setFocusable(true);
+                    studentTable.setEnabled(true);
+                    SSIS.setEnabled(true);
 
-        loadStudentData();
-        }
+                    idNumberField.setFocusable(false);
+                    firstNameLabel.setFocusable(false);
+                    lastNameLabel.setFocusable(false);
+                    yearLevelField.setFocusable(false);
+                    genderField.setFocusable(false);
+                    programCodeField.setFocusable(false);
+
+                    programCodeField.setVisible(true);
+                    yearLevelField.setVisible(true);
+                    genderField.setVisible(true);
+
+                    comboBoxSP.setVisible(false);
+                    comboBoxYearL.setVisible(false);
+                    maleG.setVisible(false);
+                    femaleG.setVisible(false);
+
+                    
+                    //get the inputs in the labels and comboBox
+                    saveStudentEdit();
+                    Write.writeStudent();
+
+                    Student.sortStudentArray();
+                    clearStudentFields();
+
+                    loadStudentData();
+                    JOptionPane.showMessageDialog(null, "Student updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Error updating student: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }        
        
     }//GEN-LAST:event_saveButtonMouseClicked
 
@@ -1978,33 +1972,46 @@ public class MainWindow extends javax.swing.JFrame {
     private void deleteCollegeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteCollegeMouseClicked
         String temp = collegeCodeC.getText();
 
-        //popup to notify before proceeding to delete the college
-
-        //program mdelete
-        for(int i = 0; i < Main.collegeData.size(); i++){
-            if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
-                break;
-            }
-
-            if(temp.equals(Main.collegeData.get(i).getCollegeCode())){
-                Main.collegeData.remove(i);
-                College.sortCollegeByCode();
-                loadCollegeData();
-                Write.writeCollege();
-                clearCollegeFields();
-            }
+        if (temp.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please select a college to delete.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-        
-          //#program modification
-        for(int i = 0; i < Main.programData.size(); i++){
 
-            if(temp.equals(Main.programData.get(i).getCollegeCode())){
-                Main.programData.get(i).setCollegeCode("none");
-                Program.sortProgramsByCode();
-                loadProgramData();
-                Write.writeProgram();
+        int confirm = JOptionPane.showConfirmDialog(null,
+            "Deleting this college will set associated programs' College Code to 'none'.\nAre you sure you want to proceed?",
+            "Confirm Deletion",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.WARNING_MESSAGE);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            //program mdelete
+            for(int i = 0; i < Main.collegeData.size(); i++){
+                if(Main.END.equals(Main.collegeData.get(i).getCollegeCode())){
+                    break;
+                }
+
+                if(temp.equals(Main.collegeData.get(i).getCollegeCode())){
+                    Main.collegeData.remove(i);
+                    College.sortCollegeByCode();
+                    loadCollegeData();
+                    Write.writeCollege();
+                    clearCollegeFields();
+                }
             }
+            
+            //#program modification
+            for(int i = 0; i < Main.programData.size(); i++){
 
+                if(temp.equals(Main.programData.get(i).getCollegeCode())){
+                    Main.programData.get(i).setCollegeCode("none");
+                    Program.sortProgramsByCode();
+                    loadProgramData();
+                    Write.writeProgram();
+                }
+
+            }
+            JOptionPane.showMessageDialog(null, "College deleted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+   
         }
 
     }//GEN-LAST:event_deleteCollegeMouseClicked
@@ -2015,24 +2022,20 @@ public class MainWindow extends javax.swing.JFrame {
 
         
          boolean checkpoint = true;
-
-        
-        collegeColor.setVisible(false);
-        collegeName.setVisible(false);
         
           //check college Code if blank
         if(collegeCodeC.getText().isBlank()){
             checkpoint = false;
-             collegeColor.setVisible(true);
-             collegeColor.setToolTipText("It's Empty");
+            JOptionPane.showMessageDialog(null, "College Code cannot be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+  
         } else {
             
             String collegeCode = collegeCodeC.getText().toLowerCase();
             
             if(!collegeCode.matches("[a-zA-Z ]+")){
                 checkpoint = false;
-                collegeColor.setVisible(true);
-                collegeColor.setToolTipText("Alphabetical Letters Only");
+                JOptionPane.showMessageDialog(null, "College Code must contain only alphabetical letters.", "Warning", JOptionPane.WARNING_MESSAGE);
+
           
             } else {
                 
@@ -2049,8 +2052,8 @@ public class MainWindow extends javax.swing.JFrame {
                 
                 if(collegeCode.equals(Main.collegeData.get(i).getCollegeCode().toLowerCase())){
                     checkpoint = false;
-                    collegeColor.setVisible(true);
-                    collegeColor.setToolTipText("College Code Exists");
+                    JOptionPane.showMessageDialog(null, "College Code already exists.", "Warning", JOptionPane.WARNING_MESSAGE);
+
                 }
         
                 }
@@ -2063,48 +2066,60 @@ public class MainWindow extends javax.swing.JFrame {
         //college name check
         if(collegeCodeN.getText().isBlank()){
             checkpoint = false;
-              collegeName.setVisible(true);
-              collegeName.setToolTipText("It's Empty");
+            JOptionPane.showMessageDialog(null, "College Name cannot be empty.", "Warning", JOptionPane.WARNING_MESSAGE);
+ 
         } else {
             
             String collegeNameC = collegeCodeN.getText();
             if(!collegeNameC.matches("[a-zA-Z ]+")){
                 checkpoint = false;
-                collegeName.setVisible(true);
-                collegeName.setToolTipText("Alphabetical Letters Only");
+                JOptionPane.showMessageDialog(null, "College Name must contain only alphabetical letters.", "Warning", JOptionPane.WARNING_MESSAGE);
+   
             }
             
         }
         
         
-        
-        if(checkpoint){
-        saveCollege.setVisible(false);
-        cancelCollege.setVisible(false);
-       
+      
+        if (checkpoint) {
+            int confirm = JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to save the changes? This will also update associated programs.",
+                "Confirm Save",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE);
+    
+            if (confirm == JOptionPane.YES_OPTION) {
+                try {
+                    saveCollege.setVisible(false);
+                    cancelCollege.setVisible(false);
+                
 
-        editCollege.setVisible(true);
-        deleteCollege.setVisible(true);
-        
-        collegeCodeC.setFocusable(false);
-        collegeCodeN.setFocusable(false);
-        
-        SSIS.setEnabled(true);
-        collegeTable.setEnabled(true);
-        collegeTable.setFocusable(true);
-        
-        saveCollegeEdit();
+                    editCollege.setVisible(true);
+                    deleteCollege.setVisible(true);
+                    
+                    collegeCodeC.setFocusable(false);
+                    collegeCodeN.setFocusable(false);
+                    
+                    SSIS.setEnabled(true);
+                    collegeTable.setEnabled(true);
+                    collegeTable.setFocusable(true);
+                    
+                    saveCollegeEdit();
 
-        Write.writeCollege();
-        Write.writeProgram();
+                    Write.writeCollege();
+                    Write.writeProgram();
 
-        clearCollegeFields();
-        clearProgramFields();
+                    clearCollegeFields();
+                    clearProgramFields();
 
-        loadProgramData();
-        loadCollegeData();
-            
-            
+                    loadProgramData();
+                    loadCollegeData();
+                   
+                    JOptionPane.showMessageDialog(null, "College updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Error updating college: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
         }
       
     }//GEN-LAST:event_saveCollegeMouseClicked
@@ -2135,7 +2150,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void cancelCollegeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelCollegeMouseClicked
         
            
-        collegeColor.setVisible(false);
+     
         collegeName.setVisible(false);
         cancelCollege.setVisible(false);
         saveCollege.setVisible(false);
@@ -2974,7 +2989,6 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JLabel collegeCodeCheckC;
     public static javax.swing.JTextField collegeCodeN;
     public static javax.swing.JTextField collegeCodeP;
-    public static javax.swing.JLabel collegeColor;
     public static javax.swing.JPanel collegeListPanel;
     public static javax.swing.JLabel collegeName;
     public static javax.swing.JLabel collegeNameCheck;
@@ -3002,13 +3016,11 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField firstNameField;
     public static javax.swing.JTextField firstNameLabel;
     public static javax.swing.JLabel firstnameCheck;
-    public static javax.swing.JLabel firstnameColor;
     public static javax.swing.JLabel genderCheck;
     public static javax.swing.JTextField genderField;
     public static javax.swing.ButtonGroup genderG;
     public static javax.swing.ButtonGroup genderGroup;
     public static javax.swing.JLabel idCheck;
-    public static javax.swing.JLabel idColor;
     public static javax.swing.JTextField idFieldNS;
     public static javax.swing.JLabel idLabel;
     public static javax.swing.JLabel idLabel1;
@@ -3060,7 +3072,6 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField lastNameField;
     public static javax.swing.JTextField lastNameLabel;
     public static javax.swing.JLabel lastnameCheck;
-    public static javax.swing.JLabel lastnameColor;
     public static javax.swing.JRadioButton male;
     public static javax.swing.JRadioButton maleG;
     public static javax.swing.JMenuBar menuBar;
@@ -3074,10 +3085,8 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField programCodeField;
     public static javax.swing.JTextField programCodeN;
     public static javax.swing.JTextField programCodeP;
-    public static javax.swing.JLabel programColor;
     public static javax.swing.JPanel programListPanel;
     public static javax.swing.JLabel programNameCheck;
-    public static javax.swing.JLabel programNameColor;
     public static javax.swing.JTable programTable;
     public static javax.swing.JButton refreshCollege;
     public static javax.swing.JButton refreshProgram;

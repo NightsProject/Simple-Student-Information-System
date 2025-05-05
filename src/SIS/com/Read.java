@@ -150,6 +150,7 @@ public class Read {
             }
             Main.YearLevel[count + 1] = Main.END;
             
+            scan.close();
         }catch(IOException e){
             
         }
@@ -170,6 +171,7 @@ public class Read {
                 count++;
                 
             }
+            scan.close();
             
         }catch(IOException e){
             

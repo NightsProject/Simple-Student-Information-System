@@ -1,3 +1,29 @@
 BSCS,BS Computer Science,CCS
-BSCA,BS Computer Application,CCS
+BSIT,BS Information Technology,CCS
+BSIS,BS Information Systems,CCS
+BSBIO,BS Biology,CSM
+BSCHM,BS Chemistry,CSM
+BSMATH,BS Mathematics,CSM
+BSSTAT,BS Statistics,CSM
+BSN,BS Nursing,CHS
+BSPH,BS Public Health,CHS
+BMLS,BS Medical Laboratory Science,CHS
+BSEDENG,BS Education Major in English,CED
+BSEDMATH,BS Education Major in Mathematics,CED
+BSEDSCI,BS Education Major in Science,CED
+BPE,BS Physical Education,CED
+BAENG,BA in English,CASS
+BAPOLSCI,BA in Political Science,CASS
+BASOC,BA in Sociology,CASS
+BAPHILO,BA in Philosophy,CASS
+BAPSYC,BA in Psychology,CASS
+BSENTREP,BS Entrepreneurship,CEBA
+BSBAFM,BS Business Administration Major in Financial Management,CEBA
+BSBAMM,BS Business Administration Major in Marketing Management,CEBA
+BSHRM,BS Hospitality and Restaurant Management,CEBA
+BSCIVILENG,BS Civil Engineering,COE
+BSCOMPENG,BS Computer Engineering,COE
+BSEE,BS Electrical Engineering,COE
+BSECE,BS Electronics Engineering,COE
+BSME,BS Mechanical Engineering,COE
 END/This is the end of the file/END

@@ -76,7 +76,7 @@ public class Initialize {
                 write.close();
             }
    
-            
+            scan.close();
         } catch (IOException e){
             
         }
@@ -102,7 +102,7 @@ public class Initialize {
                 write.close();
             }
    
-            
+            scan.close();
         } catch (IOException e){
             
         }
@@ -134,7 +134,7 @@ public class Initialize {
                 write.close();
             }
    
-            
+            scan.close();
         } catch (IOException e){
             
         }
