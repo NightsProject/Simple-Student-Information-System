@@ -21,7 +21,8 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private static boolean shouldRefresh = true; // Default to true
+
     private void initComponents() {
 
         AddCollegeDialog = new javax.swing.JDialog();
@@ -126,7 +127,6 @@ public class MainWindow extends javax.swing.JFrame {
         deleteCollege = new javax.swing.JButton();
         cancelCollege = new javax.swing.JButton();
         saveCollege = new javax.swing.JButton();
-        collegeName = new javax.swing.JLabel();
         programListPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         programTable = new javax.swing.JTable();
@@ -527,7 +527,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         editButton.setText("EDIT");
         editButton.setFocusable(false);
-        editButton.setOpaque(true);
         editButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 editButtonMouseClicked(evt);
@@ -537,7 +536,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         saveButton.setText("SAVE");
         saveButton.setFocusable(false);
-        saveButton.setOpaque(true);
         saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveButtonMouseClicked(evt);
@@ -569,7 +567,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         delete.setText("DELETE");
         delete.setFocusable(false);
-        delete.setOpaque(true);
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteMouseClicked(evt);
@@ -579,7 +576,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         cancel.setText("CANCEL");
         cancel.setFocusable(false);
-        cancel.setOpaque(true);
         cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cancelMouseClicked(evt);
@@ -749,10 +745,6 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
         collegeListPanel.add(saveCollege, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 120, -1, 20));
-
-        collegeName.setBackground(new java.awt.Color(255, 0, 0));
-        collegeName.setOpaque(true);
-        collegeListPanel.add(collegeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 10, 10));
 
         MainMenu.add(collegeListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 1150, 180));
 
@@ -924,7 +916,6 @@ public class MainWindow extends javax.swing.JFrame {
         menuBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         menuBar.setForeground(new java.awt.Color(215, 243, 220));
         menuBar.setMinimumSize(new java.awt.Dimension(102, 50));
-        menuBar.setOpaque(true);
         menuBar.setPreferredSize(new java.awt.Dimension(102, 50));
 
         SSIS.setBackground(new java.awt.Color(7, 27, 20));
@@ -1381,21 +1372,26 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         
+
+        if (!shouldRefresh) {
+            return; // Skip refreshing if the flag is false
+        }
+    
+        if (!saveButton.isVisible() && !cancel.isVisible()) {
+         
         //student Table Part
         saveButton.setVisible(false);
-        cancel.setVisible(false);
-        
-    
-     
+        cancel.setVisible(false); 
         comboBoxYearL.setVisible(false);
-        
-        //program Table part
-        saveProgram.setVisible(false);
-        cancelProgram.setVisible(false);
-        comboBoxCCP.setVisible(false);
+        }
     
-        collegeName.setVisible(false);
-       
+        if(!saveProgram.isVisible() && !cancelProgram.isVisible()){
+              //program Table part
+            saveProgram.setVisible(false);
+            cancelProgram.setVisible(false);
+            comboBoxCCP.setVisible(false);  
+        }
+      
         loadStudentData();
         loadCollegeData();
         loadProgramData();
@@ -1516,6 +1512,8 @@ public class MainWindow extends javax.swing.JFrame {
             }
             
         }
+
+        shouldRefresh = false;
         
         if (checkpoint) {
             int confirm = JOptionPane.showConfirmDialog(null,
@@ -1549,6 +1547,7 @@ public class MainWindow extends javax.swing.JFrame {
 
                     loadProgramData();
                     loadStudentData();
+                    shouldRefresh = true;
                     JOptionPane.showMessageDialog(null, "Program updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Error updating program: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -1577,6 +1576,8 @@ public class MainWindow extends javax.swing.JFrame {
             collegeCodeP.setVisible(false);
             comboBoxCCP.setVisible(true);
 
+            int selectedRow = programTable.getSelectedRow();
+            String collegeCode = (String) programTable.getValueAt(selectedRow,2);
             //loadthe college data
             comboBoxCCP.removeAllItems();
             for(int i = 0; i < Main.collegeData.size(); i++){
@@ -1586,6 +1587,7 @@ public class MainWindow extends javax.swing.JFrame {
                 comboBoxCCP.addItem(Main.collegeData.get(i).getCollegeCode());
 
             }
+            comboBoxCCP.setSelectedItem(collegeCode);
         }
 
     }//GEN-LAST:event_editProgramMouseClicked
@@ -1678,8 +1680,6 @@ public class MainWindow extends javax.swing.JFrame {
     private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
         
         
-        saveButton.setEnabled(false);
-        cancel.setEnabled(false);
         saveButton.setVisible(false);
 
         delete.setVisible(true);
@@ -1860,7 +1860,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         }
        
-        
+        shouldRefresh = false;
         if (checkpoint) {
             int confirm = JOptionPane.showConfirmDialog(null,
                 "Are you sure you want to save the changes?",
@@ -1904,6 +1904,7 @@ public class MainWindow extends javax.swing.JFrame {
                     clearStudentFields();
 
                     loadStudentData();
+                    shouldRefresh = true;
                     JOptionPane.showMessageDialog(null, "Student updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Error updating student: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -1941,20 +1942,46 @@ public class MainWindow extends javax.swing.JFrame {
             maleG.setVisible(true);
             femaleG.setVisible(true);
 
+            int selectedRow = studentTable.getSelectedRow();
+            String yearLevel = (String) studentTable.getValueAt(selectedRow, 3);
+            String gender = (String) studentTable.getValueAt(selectedRow, 4);
+            String programCode = (String) studentTable.getValueAt(selectedRow, 5);
+
             //load Academic Year
             comboBoxYearL.removeAllItems();
+            comboBoxYearL.addItem(yearLevel);
             for(int i = 0; i < Main.YearLevel.length; i++){
+
+                if(Main.YearLevel[i] == yearLevel){
+                    continue;
+                }
 
                 if(Main.YearLevel[i] == null){
                     break;
                 }
+                if(Main.YearLevel[i] == "END"){
+                    break;
+                }
+                
 
                 comboBoxYearL.addItem(Main.YearLevel[i]);
             }
 
+             //gender selection
+            if(gender == "Female"){
+                femaleG.setSelected(true);
+            } else {
+                maleG.setSelected(true);
+            }
+
+
             comboBoxSP.removeAllItems();
+            comboBoxSP.addItem(programCode);
             for(int i = 0; i < Main.programData.size(); i++){
 
+                if(programCode.equals(Main.programData.get(i).getProgramCode())){
+                    continue;
+                }
                 if(Main.END.equals(Main.programData.get(i).getProgramCode())){
                     break;
                 }
@@ -2080,7 +2107,8 @@ public class MainWindow extends javax.swing.JFrame {
         }
         
         
-      
+        shouldRefresh = false;
+        
         if (checkpoint) {
             int confirm = JOptionPane.showConfirmDialog(null,
                 "Are you sure you want to save the changes? This will also update associated programs.",
@@ -2114,7 +2142,8 @@ public class MainWindow extends javax.swing.JFrame {
 
                     loadProgramData();
                     loadCollegeData();
-                   
+                    
+                    shouldRefresh = true;
                     JOptionPane.showMessageDialog(null, "College updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Error updating college: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -2151,7 +2180,7 @@ public class MainWindow extends javax.swing.JFrame {
         
            
      
-        collegeName.setVisible(false);
+
         cancelCollege.setVisible(false);
         saveCollege.setVisible(false);
 
@@ -2990,7 +3019,6 @@ public class MainWindow extends javax.swing.JFrame {
     public static javax.swing.JTextField collegeCodeN;
     public static javax.swing.JTextField collegeCodeP;
     public static javax.swing.JPanel collegeListPanel;
-    public static javax.swing.JLabel collegeName;
     public static javax.swing.JLabel collegeNameCheck;
     public static javax.swing.JTable collegeTable;
     public static javax.swing.JComboBox<String> comboBoxCC;

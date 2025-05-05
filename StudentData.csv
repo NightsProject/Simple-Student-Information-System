@@ -1,6 +1,5 @@
-2024-0001,Emily,Jones,FirstYear,Female,BSCHM
+2024-0001,Emily,Jones,FirstYear,Male,BSCHM
 2024-0002,Susan,Miller,SecondYear,Male,BSCIVILENG
-2024-0003,Anthony,Harris,FirstYear,Female,BAENG
 2024-0004,Kevin,Clark,SecondYear,Male,BSHRM
 2024-0005,Kimberly,Mitchell,FourthYear,Male,BSENTREP
 2024-0006,Linda,Allen,FourthYear,Male,BAENG
@@ -26,7 +25,7 @@
 2024-0026,Carol,Perez,SecondYear,Male,BSEDMATH
 2024-0027,Matthew,White,FirstYear,Female,BSEDSCI
 2024-0028,Joshua,Moore,FourthYear,Female,BSHRM
-2024-0029,Donna,Allen,FourthYear,Female,BSCS
+2024-0029,Donna,Allen,FourthYear,Male,BSCS
 2024-0030,Donald,Martinez,FirstYear,Female,BSHRM
 2024-0031,Lisa,Miller,SecondYear,Female,BSSTAT
 2024-0032,Richard,Martinez,SecondYear,Male,BSEDMATH
