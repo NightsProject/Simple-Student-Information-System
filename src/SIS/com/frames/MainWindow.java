@@ -1948,6 +1948,7 @@ public class MainWindow extends javax.swing.JFrame {
             String programCode = (String) studentTable.getValueAt(selectedRow, 5);
 
             //load Academic Year
+            comboBoxYearL.setEditable(false);
             comboBoxYearL.removeAllItems();
             comboBoxYearL.addItem(yearLevel);
             for(int i = 0; i < Main.YearLevel.length; i++){
