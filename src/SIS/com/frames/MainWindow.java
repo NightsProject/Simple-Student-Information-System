@@ -604,7 +604,7 @@ public class MainWindow extends javax.swing.JFrame {
         MainMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 70, 30));
 
         comboBoxSearch.setForeground(new java.awt.Color(0, 0, 0));
-        comboBoxSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Number", "Firstname", "Lastname", "Year Level", "Gender", "College Code", "Program Code" }));
+        comboBoxSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID Number", "Firstname", "Lastname", "Year Level", "Gender", "Program Code" }));
         comboBoxSearch.setToolTipText("");
         MainMenu.add(comboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, -1, 20));
 
